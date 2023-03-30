@@ -212,7 +212,10 @@ class Card: Identifiable, Codable {
                 }
             }
         }
-        discardCount -= 1
+        if discardCount > 0 {
+            discardCount -= 1
+        }
+        
     }
     
     func addCurse() {
