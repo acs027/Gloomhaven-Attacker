@@ -16,6 +16,8 @@ struct SideMenu: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
+            Spacer()
+                .frame(height: 30)
                 List{
                     Button{
                         deck.deckReset()
@@ -36,6 +38,7 @@ struct SideMenu: View {
                             .foregroundColor(.red)
                     }
                 }
+
                 List{
                     Button{
                         deck.addBless()

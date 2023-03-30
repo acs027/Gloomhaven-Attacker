@@ -19,17 +19,9 @@ struct BrutePerk: View {
                     Text("Remove two -1 cards")
                     Spacer()
                     Button{
-                        let minusOne = className + Deck.CardNames.minusOne.rawValue
-                        let deneme = Deck.CardNames.minusOne.rawValue
-                        if deck.buttonArray[0] {
-                            deck.addCard(deneme)
-                            deck.addCard(deneme)
-                        } else {
-                            deck.removeCard(deneme)
-                            deck.removeCard(deneme)
-                        }
-                        
                         deck.buttonArray[0].toggle()
+                        rowOne(condition: deck.buttonArray[0])
+                        
                     } label: {
                         let img = deck.buttonArray[0] ? "checkmark.square" : "square"
                         Image(systemName: img)
@@ -39,19 +31,9 @@ struct BrutePerk: View {
                     Text("Replace one -1 card with one +1 card")
                     Spacer()
                     Button{
-                        let minusOne = className + Deck.CardNames.minusOne.rawValue
-                        let plusOne = className + Deck.CardNames.plusOne.rawValue
-                        let deneme = Deck.CardNames.minusOne.rawValue
-                        let denemee = Deck.CardNames.plusOne.rawValue
-                        if deck.buttonArray[1] {
-                            deck.addCard(deneme)
-                            deck.removeCard(denemee)
-                        } else {
-                            deck.addCard(denemee)
-                            deck.removeCard(deneme)
-                        }
-                        
                         deck.buttonArray[1].toggle()
+                        rowTwo(condition: deck.buttonArray[1])
+                        
                     } label: {
                         let img = deck.buttonArray[1] ? "checkmark.square" : "square"
                         Image(systemName: img)
@@ -61,23 +43,17 @@ struct BrutePerk: View {
                     Text("Add two +1 cards")
                     Spacer()
                     Button{
-                        let minusOne = className + Deck.CardNames.plusOne.rawValue
-                        let deneme = Deck.CardNames.plusOne.rawValue
-                        if deck.buttonArray[2] {
-                            deck.removeCard(deneme)
-                            deck.removeCard(deneme)
-                        } else {
-                            deck.addCard(deneme)
-                            deck.addCard(deneme)
-                        }
-                        
                         deck.buttonArray[2].toggle()
+                        rowThree(condition: deck.buttonArray[2])
+                        
                     } label: {
                         let img = deck.buttonArray[2] ? "checkmark.square" : "square"
                         Image(systemName: img)
                     }
                     Button{
                         deck.buttonArray[3].toggle()
+                        rowThree(condition: deck.buttonArray[3])
+                        
                     } label: {
                         let img = deck.buttonArray[3] ? "checkmark.square" : "square"
                         Image(systemName: img)
@@ -121,7 +97,7 @@ struct BrutePerk: View {
                 }
             } .padding(.horizontal)
             HStack{
-                Text("Add one STUN card")
+                Text("Add one STUN card)")
                 Spacer()
                 Button{
                     deck.buttonArray[8].toggle()
@@ -137,7 +113,7 @@ struct BrutePerk: View {
                 }
             } .padding(.horizontal)
             HStack{
-                Text("Add one DISARM card and one MUDDLE card")
+                Text("Add one DISARM \(Image(systemName: "hand.raised.slash.fill")) card  and one MUDDLE card")
                 Spacer()
                 Button{
                     deck.buttonArray[10].toggle()
@@ -163,7 +139,7 @@ struct BrutePerk: View {
                 }
             } .padding(.horizontal)
             HStack{
-                Text("Add one +1 Shield 1 Self card")
+                Text("Add one +1 Shield \(Image(systemName: "shield.fill"))1, self card")
                 Spacer()
                 Button{
                     deck.buttonArray[13].toggle()
@@ -183,6 +159,82 @@ struct BrutePerk: View {
                 }
             } .padding(.horizontal)
         }
+    }
+    
+    // Remove two -1 cards
+    func rowOne(condition: Bool) {
+        
+        if condition {
+            deck.removeCard("minusOne")
+            deck.removeCard("minusOne")
+        } else {
+            deck.addCard("minusOne")
+            deck.addCard("minusOne")
+        }
+    }
+    
+    // Replace one -1 card with one +1 card
+    func rowTwo(condition: Bool) {
+        
+        if condition {
+            deck.removeCard("minusOne")
+            deck.addCard("plusOne")
+        } else {
+            deck.removeCard("plusOne")
+            deck.addCard("minusOne")
+        }
+    }
+    
+    // Add two +1 cards
+    func rowThree(condition: Bool) {
+        
+        if condition {
+            deck.addCard("plusOne")
+            deck.addCard("plusOne")
+        } else {
+            deck.removeCard("plusOne")
+            deck.removeCard("plusOne")
+        }
+    }
+    
+    // Add one +3 card
+    func rowFour(condition: Bool) {
+        
+    }
+    
+    // Add three Push 1 cards
+    func rowFive(condition: Bool) {
+        
+    }
+    
+    // Add two Pierce 3 cards
+    func rowSix(condition: Bool) {
+        
+    }
+    
+    // Add one Stun card
+    func rowSeven(condition: Bool) {
+        
+    }
+    
+    // Add one Disarm card and Muddle card
+    func rowEight(condition: Bool) {
+        
+    }
+    
+    // Add one Add Target card
+    func rowNine(condition :Bool) {
+        
+    }
+    
+    // Add one +1 Shield 1 Self card
+    func rowTen(condition: Bool) {
+        
+    }
+    
+    // Ignore negative item effects and add one +1 card
+    func rowEleven(condition: Bool) {
+        
     }
 }
 

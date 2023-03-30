@@ -65,7 +65,7 @@ struct DeckView: View {
                         }
                     }
                     Spacer()
-                    ForEach(0 ..< deck.discardCount, id: \.self) { _ in
+                    ForEach(0..<deck.discardCount, id: \.self) { _ in
                         Rectangle()
                             .frame(width: cardWidth, height: cardHeight + 5)
                             .opacity(0)
