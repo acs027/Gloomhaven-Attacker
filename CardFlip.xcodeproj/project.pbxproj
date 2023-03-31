@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0814571329D1AA77000D5DA9 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814571229D1AA77000D5DA9 /* Decks.swift */; };
 		0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */; };
+		0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4429D671E200B53B51 /* perkIcons.xcassets */; };
+		0880DD4B29D67BB100B53B51 /* PirataOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */; };
 		0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E44929A79E2F00FB277E /* CardFlipApp.swift */; };
 		0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E44B29A79E2F00FB277E /* ContentView.swift */; };
 		0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882E44D29A79E3100FB277E /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		0814571229D1AA77000D5DA9 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentDirectory.swift"; sourceTree = "<group>"; };
+		0880DD4429D671E200B53B51 /* perkIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = perkIcons.xcassets; sourceTree = "<group>"; };
+		0880DD4929D6780B00B53B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PirataOne-Regular.ttf"; sourceTree = "<group>"; };
 		0882E44629A79E2F00FB277E /* CardFlip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardFlip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882E44929A79E2F00FB277E /* CardFlipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipApp.swift; sourceTree = "<group>"; };
 		0882E44B29A79E2F00FB277E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +74,8 @@
 		0882E44829A79E2F00FB277E /* CardFlip */ = {
 			isa = PBXGroup;
 			children = (
+				0880DD4929D6780B00B53B51 /* Info.plist */,
+				0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */,
 				0882E44929A79E2F00FB277E /* CardFlipApp.swift */,
 				28C7D23C29B9047300073C6D /* AppDelegate.swift */,
 				0882E44B29A79E2F00FB277E /* ContentView.swift */,
@@ -80,6 +87,7 @@
 				28FD47FA29D101C300C566BD /* CharacterCreation.swift */,
 				2889105829CA46BF000D1877 /* Perk */,
 				0882E44D29A79E3100FB277E /* Assets.xcassets */,
+				0880DD4429D671E200B53B51 /* perkIcons.xcassets */,
 				0882E44F29A79E3100FB277E /* Preview Content */,
 			);
 			path = CardFlip;
@@ -161,7 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */,
+				0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */,
 				0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */,
+				0880DD4B29D67BB100B53B51 /* PirataOne-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +323,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CardFlip/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardFlip/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -342,6 +353,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CardFlip/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CardFlip/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
