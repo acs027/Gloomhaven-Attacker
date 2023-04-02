@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0807294D29D7E6FF00647877 /* BerserkerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807294C29D7E6FF00647877 /* BerserkerPerk.swift */; };
 		0814571329D1AA77000D5DA9 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814571229D1AA77000D5DA9 /* Decks.swift */; };
 		0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */; };
+		087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */; };
 		0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4429D671E200B53B51 /* perkIcons.xcassets */; };
 		0880DD4B29D67BB100B53B51 /* PirataOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */; };
 		0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E44929A79E2F00FB277E /* CardFlipApp.swift */; };
@@ -25,8 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0807294C29D7E6FF00647877 /* BerserkerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerserkerPerk.swift; sourceTree = "<group>"; };
 		0814571229D1AA77000D5DA9 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentDirectory.swift"; sourceTree = "<group>"; };
+		087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = classIcons.xcassets; sourceTree = "<group>"; };
 		0880DD4429D671E200B53B51 /* perkIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = perkIcons.xcassets; sourceTree = "<group>"; };
 		0880DD4929D6780B00B53B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PirataOne-Regular.ttf"; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				2889105829CA46BF000D1877 /* Perk */,
 				0882E44D29A79E3100FB277E /* Assets.xcassets */,
 				0880DD4429D671E200B53B51 /* perkIcons.xcassets */,
+				087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */,
 				0882E44F29A79E3100FB277E /* Preview Content */,
 			);
 			path = CardFlip;
@@ -106,6 +111,7 @@
 			children = (
 				2889105929CA46BF000D1877 /* PerkView.swift */,
 				2889105A29CA46BF000D1877 /* BrutePerk.swift */,
+				0807294C29D7E6FF00647877 /* BerserkerPerk.swift */,
 			);
 			path = Perk;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 				0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */,
 				0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */,
 				0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */,
+				087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */,
 				0880DD4B29D67BB100B53B51 /* PirataOne-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +198,7 @@
 				2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */,
 				0814571329D1AA77000D5DA9 /* Decks.swift in Sources */,
 				28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */,
+				0807294D29D7E6FF00647877 /* BerserkerPerk.swift in Sources */,
 				2889105B29CA46BF000D1877 /* PerkView.swift in Sources */,
 				282EFE2929AF65B000F706F0 /* DeckView.swift in Sources */,
 			);
