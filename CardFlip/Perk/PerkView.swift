@@ -94,6 +94,8 @@ struct PerkView: View {
         NavigationStack {
             if deck.characterClass == "Brute" {
                 BrutePerk(deck: deck)
+            } else if deck.characterClass == "Berserker" {
+                BerserkerPerk(deck: deck)
             }
         }
         .toolbar {
