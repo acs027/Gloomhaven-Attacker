@@ -43,9 +43,11 @@ struct CragheartPerk: View {
                                 Text("Replace one")
                                 minusOne()
                                 Text("card with one")
-                                plusOne()
+                                
                             }
                             HStack {
+                                Text(" ")
+                                plusOne()
                                 Text(" card")
                             }
                         }
@@ -60,14 +62,14 @@ struct CragheartPerk: View {
                         }
                         Button{
                             deck.buttonArray[2].toggle()
-                            rowThree(condition: deck.buttonArray[2])
+                            rowTwo(condition: deck.buttonArray[2])
                         } label: {
                             let img = deck.buttonArray[2] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
                         Button{
                             deck.buttonArray[3].toggle()
-                            rowThree(condition: deck.buttonArray[3])
+                            rowTwo(condition: deck.buttonArray[3])
                         } label: {
                             let img = deck.buttonArray[3] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -87,7 +89,7 @@ struct CragheartPerk: View {
                         
                         Button{
                             deck.buttonArray[4].toggle()
-                            rowFour(condition: deck.buttonArray[4])
+                            rowThree(condition: deck.buttonArray[4])
                         } label: {
                             let img = deck.buttonArray[4] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -113,7 +115,7 @@ struct CragheartPerk: View {
                         }
                         Button{
                             deck.buttonArray[6].toggle()
-                            rowFive(condition: deck.buttonArray[6])
+                            rowFour(condition: deck.buttonArray[6])
                         } label: {
                             let img = deck.buttonArray[6] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -140,7 +142,7 @@ struct CragheartPerk: View {
                         }
                         Button{
                             deck.buttonArray[8].toggle()
-                            rowSix(condition: deck.buttonArray[8])
+                            rowFive(condition: deck.buttonArray[8])
                         } label: {
                             let img = deck.buttonArray[8] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -185,7 +187,7 @@ struct CragheartPerk: View {
                         }
                         Button{
                             deck.buttonArray[11].toggle()
-                            rowEight(condition: deck.buttonArray[11])
+                            rowSeven(condition: deck.buttonArray[11])
                         } label: {
                             let img = deck.buttonArray[11] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -203,7 +205,7 @@ struct CragheartPerk: View {
                         
                         Button{
                             deck.buttonArray[12].toggle()
-                            rowNine(condition: deck.buttonArray[12])
+                            rowEight(condition: deck.buttonArray[12])
                         } label: {
                             let img = deck.buttonArray[12] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -226,8 +228,8 @@ struct CragheartPerk: View {
                     }
                     
                     HStack {
-                        //ignore scenario item effects
-                        Text("Ignore scenario item effects")
+                        //ignore scenario scenario effects
+                        Text("Ignore scenario scenario effects")
                         
                         Spacer()
                         

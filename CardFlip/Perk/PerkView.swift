@@ -47,7 +47,7 @@ struct plusZero: View {
                 .stroke(Color.black, lineWidth: 2)
                 .frame(width: 23)
             Text("+0")
-                .font(.custom("PirataOne-Regular", size: 18))
+                .font(.custom("Pirata_One", size: 18))
         }
     }
 }
@@ -92,11 +92,26 @@ struct PerkView: View {
     @ObservedObject var deck: Deck
     var body: some View {
         NavigationStack {
-            if deck.characterClass == "Brute" {
+            switch deck.characterClass {
+            case "Brute":
                 BrutePerk(deck: deck)
-            } else if deck.characterClass == "Berserker" {
+            case "Spellweaver":
+                SpellweaverPerk(deck: deck)
+            case "Mindthief":
+                MindthiefPerk(deck: deck)
+            case "Scoundrel":
+                ScoundrelPerk(deck: deck)
+            case "Tinkerer":
+                TinkererPerk(deck: deck)
+            case "Cragheart":
+                CragheartPerk(deck: deck)
+            case "Berserker":
                 BerserkerPerk(deck: deck)
+                
+            default:
+                Text("---")
             }
+                
         }
         .toolbar {
             Button {

@@ -1,19 +1,19 @@
 //
-//  SpellweaverPerk.swift
+//  TinkererPerk.swift
 //  CardFlip
 //
-//  Created by Furkan Eken on 2.04.2023.
+//  Created by ali cihan on 2.04.2023.
 //
 
 import SwiftUI
 
-struct SpellweaverPerk: View {
+struct TinkererPerk: View {
     
     @ObservedObject var deck: Deck
     
     var body: some View {
         ZStack {
-            Image("spellweaver")
+            Image("tinkerer")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
@@ -21,9 +21,9 @@ struct SpellweaverPerk: View {
                 Text(String(deck.cards.count))
                 Group {
                     HStack{
-                        //Remove four +0 cards
-                        Text("Remove four")
-                        plusZero()
+                        //Remove two -1 cards
+                        Text("Remove two")
+                        minusOne()
                         Text("cards")
                         
                         Spacer()
@@ -34,30 +34,24 @@ struct SpellweaverPerk: View {
                             let img = deck.buttonArray[0] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
-                    }
-                    
-                    HStack {
-                        //Replace one -1 card with one +1 card
-                        VStack(alignment: .leading, spacing: 0) {
-                            HStack {
-                                Text("Replace one")
-                                minusOne()
-                                Text("card with one")
-                                plusOne()
-                            }
-                            HStack {
-                                Text(" card")
-                            }
-                        }
-                        
-                        Spacer()
                         Button{
                             deck.buttonArray[1].toggle()
-                            rowTwo(condition: deck.buttonArray[1])
+                            rowOne(condition: deck.buttonArray[1])
                         } label: {
                             let img = deck.buttonArray[1] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
+                    }
+                    
+                    HStack {
+                        // Replace one -2 card with one +0 card
+                        Text("Replace one")
+                        minusTwo()
+                        Text("card with one")
+                        plusZero()
+                        Text("card")
+                        
+                        Spacer()
                         Button{
                             deck.buttonArray[2].toggle()
                             rowTwo(condition: deck.buttonArray[2])
@@ -68,12 +62,11 @@ struct SpellweaverPerk: View {
                     }
                     
                     HStack {
-                        //Add two +1 cards
-                        HStack {
-                            Text("Add two")
-                            plusOne()
-                            Text("cards")
-                        }
+                        // Add two +1 cards
+                        Text("Add two")
+                        plusOne()
+                        Text("cards")
+                        
                         Spacer()
                         
                         Button{
@@ -83,9 +76,19 @@ struct SpellweaverPerk: View {
                             let img = deck.buttonArray[3] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
+                    }
+                    
+                    HStack {
+                        // Add one +3 card
+                        Text("Add one")
+                        plusThree()
+                        Text("card")
+                        
+                        Spacer()
+                        
                         Button{
                             deck.buttonArray[4].toggle()
-                            rowThree(condition: deck.buttonArray[4])
+                            rowFour(condition: deck.buttonArray[4])
                         } label: {
                             let img = deck.buttonArray[4] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -93,18 +96,18 @@ struct SpellweaverPerk: View {
                     }
                     
                     HStack {
-                        //add one +0 stun card
-                        Text("Add one")
-                        plusZero()
-                        Text("STUN")
-                        Image("stun").perkIconMod()
-                        Text("card")
+                        // Add two rolling fire cards
+                        
+                        Text("Add two")
+                        Image("rolling").perkIconMod()
+                        Image("fire").perkIconMod()
+                        Text("cards")
                         
                         Spacer()
                         
                         Button{
                             deck.buttonArray[5].toggle()
-                            rowFour(condition: deck.buttonArray[5])
+                            rowFive(condition: deck.buttonArray[5])
                         } label: {
                             let img = deck.buttonArray[5] ? "checkmark.square" : "square"
                             Image(systemName: img)
@@ -112,7 +115,26 @@ struct SpellweaverPerk: View {
                     }
                     
                     HStack {
-                        //add one +1 wound card
+                        // Add three rolling muddle cards
+                        Text("Add three")
+                        Image("rolling").perkIconMod()
+                        Text("MUDDLE")
+                        Image("muddle").perkIconMod()
+                        Text("cards")
+                        
+                        Spacer()
+                        
+                        Button{
+                            deck.buttonArray[6].toggle()
+                            rowSix(condition: deck.buttonArray[6])
+                        } label: {
+                            let img = deck.buttonArray[6] ? "checkmark.square" : "square"
+                            Image(systemName: img)
+                        }
+                    }
+                    
+                    HStack {
+                        // Add one +1 wound card
                         Text("Add one")
                         plusOne()
                         Text("WOUND")
@@ -122,43 +144,12 @@ struct SpellweaverPerk: View {
                         Spacer()
                         
                         Button{
-                            deck.buttonArray[6].toggle()
-                            rowFive(condition: deck.buttonArray[6])
-                        } label: {
-                            let img = deck.buttonArray[6] ? "checkmark.square" : "square"
-                            Image(systemName: img)
-                        }
-                    }
-                    
-                    HStack {
-                        //add one +1 immobilize card
-                        Text("Add one")
-                        plusOne()
-                        Text("IMMOBILIZE")
-                        Image("immobilize").perkIconMod()
-                        Text("card")
-                        
-                        Spacer()
-                        
-                        Button{
                             deck.buttonArray[7].toggle()
-                            rowSix(condition: deck.buttonArray[7])
+                            rowSeven(condition: deck.buttonArray[7])
                         } label: {
                             let img = deck.buttonArray[7] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
-                    }
-                    
-                    HStack {
-                        //add one +1 curse card
-                        Text("Add one")
-                        plusOne()
-                        Text("CURSE")
-                        Image("curseP").perkIconMod()
-                        Text("card")
-                        
-                        Spacer()
-                        
                         Button{
                             deck.buttonArray[8].toggle()
                             rowSeven(condition: deck.buttonArray[8])
@@ -169,10 +160,11 @@ struct SpellweaverPerk: View {
                     }
                     
                     HStack {
-                        //add one +2 fire card
+                        // add one +1 immobilize card
                         Text("Add one")
-                        plusTwo()
-                        Image("fire").perkIconMod()
+                        plusOne()
+                        Text("IMMOBILIZE")
+                        Image("immobilize").perkIconMod()
                         Text("card")
                         
                         Spacer()
@@ -194,11 +186,12 @@ struct SpellweaverPerk: View {
                     }
                     
                     HStack {
-                        //add one +2 frost card
+                        // add one +1 heal 2 card
                         Text("Add one")
-                        plusTwo()
-                        Image("frost").perkIconMod()
-                        Text("card")
+                        plusOne()
+                        Text("Heal")
+                        Image("heal").perkIconMod()
+                        Text("2 card")
                         
                         Spacer()
                         
@@ -219,14 +212,13 @@ struct SpellweaverPerk: View {
                     }
                     Group {
                         HStack {
-                            //Add one rolling earth and one rolling wind card
+                            // add one +0 add target card
                             Text("Add one")
-                            Image("rolling").perkIconMod()
-                            Image("earth").perkIconMod()
-                            Text("and one")
-                            Image("rolling").perkIconMod()
-                            Image("wind").perkIconMod()
+                            plusZero()
+                            Text("ADD TARGET")
+                            Image("add_target").perkIconMod()
                             Text("card")
+                            
                             Spacer()
                             
                             Button{
@@ -237,15 +229,11 @@ struct SpellweaverPerk: View {
                                 Image(systemName: img)
                             }
                         }
+                        
                         HStack {
-                            //Add one rolling sun and one rolling dark card
-                            Text("Add one")
-                            Image("rolling").perkIconMod()
-                            Image("sun").perkIconMod()
-                            Text("and one")
-                            Image("rolling").perkIconMod()
-                            Image("dark").perkIconMod()
-                            Text("card")
+                            // Ignore negative scenario effects
+                            Text("Ignore negative scenario effects")
+                            
                             Spacer()
                             
                             Button{
@@ -257,90 +245,70 @@ struct SpellweaverPerk: View {
                             }
                         }
                     }
+                    
                 }
             }
         }
         .padding(.horizontal)
     }
-    // Remove four +0 cards
+    //Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+
     }
-    // Replace one -1 card with one +1 card
+    // Replace one -2 card with one +0 card
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+
     }
     
     // Add two +1 cards
     func rowThree(condition: Bool) {
         
-        if condition {
-            deck.addCard("plusOne")
-            deck.addCard("plusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.removeCard("plusOne")
-        }
     }
     
-    // Replace one -1 card with one +1 card
+    // Add one +3 card
     func rowFour(condition: Bool) {
         
     }
     
-    // Add two rolling wound cards
+    // Add two rolling fire cards
     func rowFive(condition: Bool) {
         
     }
     
-    // Add one rolling stun card
+    // Add three rolling muddle cards
     func rowSix(condition: Bool) {
         
     }
     
-    // Add one rolling +1 disarm card
+    // Add one +1 wound card
     func rowSeven(condition: Bool) {
         
     }
     
-    // Add two rolling heal 1 cards
+    // add one +1 immobilize card
     func rowEight(condition: Bool) {
         
     }
     
-    // Add one +2 fire card
+    // add one +1 heal 2 card
     func rowNine(condition :Bool) {
         
     }
     
-    // Ignore negative item effects
+    // add one +0 add target card
     func rowTen(condition: Bool) {
         
     }
-    // Ignore negative item effects
+    
+    // Ignore negative scenario effects
     func rowEleven(condition: Bool) {
         
     }
+
 }
 
-struct SpellweaverPerk_Previews: PreviewProvider {
+struct TinkererPerk_Previews: PreviewProvider {
     static var previews: some View {
-        SpellweaverPerk(deck: Deck())
+        TinkererPerk(deck: Deck())
     }
 }
