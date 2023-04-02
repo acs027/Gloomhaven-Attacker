@@ -20,6 +20,8 @@
 		0882E45C29A79F5B00FB277E /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E45B29A79F5B00FB277E /* Deck.swift */; };
 		282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B3EEF29C78DB900D3D399 /* SideMenu.swift */; };
 		282EFE2929AF65B000F706F0 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EFE2829AF65B000F706F0 /* DeckView.swift */; };
+		2878AE9E29D9021900DBE245 /* CragheartPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9D29D9021900DBE245 /* CragheartPerk.swift */; };
+		2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */; };
 		2889105B29CA46BF000D1877 /* PerkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105929CA46BF000D1877 /* PerkView.swift */; };
 		2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105A29CA46BF000D1877 /* BrutePerk.swift */; };
 		28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7D23C29B9047300073C6D /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 		0882E45B29A79F5B00FB277E /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		282B3EEF29C78DB900D3D399 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		282EFE2829AF65B000F706F0 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		2878AE9D29D9021900DBE245 /* CragheartPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CragheartPerk.swift; sourceTree = "<group>"; };
+		2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellweaverPerk.swift; sourceTree = "<group>"; };
 		2889105929CA46BF000D1877 /* PerkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerkView.swift; sourceTree = "<group>"; };
 		2889105A29CA46BF000D1877 /* BrutePerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrutePerk.swift; sourceTree = "<group>"; };
 		28C7D23C29B9047300073C6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				2889105929CA46BF000D1877 /* PerkView.swift */,
 				2889105A29CA46BF000D1877 /* BrutePerk.swift */,
 				0807294C29D7E6FF00647877 /* BerserkerPerk.swift */,
+				2878AE9D29D9021900DBE245 /* CragheartPerk.swift */,
+				2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */,
 			);
 			path = Perk;
 			sourceTree = "<group>";
@@ -191,8 +197,10 @@
 			files = (
 				0882E45C29A79F5B00FB277E /* Deck.swift in Sources */,
 				0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */,
+				2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */,
 				0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */,
 				282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */,
+				2878AE9E29D9021900DBE245 /* CragheartPerk.swift in Sources */,
 				28FD47FB29D101C300C566BD /* CharacterCreation.swift in Sources */,
 				0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */,
 				2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */,
