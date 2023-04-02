@@ -10,6 +10,10 @@
 		0807294D29D7E6FF00647877 /* BerserkerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0807294C29D7E6FF00647877 /* BerserkerPerk.swift */; };
 		0814571329D1AA77000D5DA9 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814571229D1AA77000D5DA9 /* Decks.swift */; };
 		0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */; };
+		083D5A8B29D93A3000171224 /* MindthiefPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5A8A29D93A2F00171224 /* MindthiefPerk.swift */; };
+		083D5A8D29D942F300171224 /* ScoundrelPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5A8C29D942F300171224 /* ScoundrelPerk.swift */; };
+		083D5A8F29D9577500171224 /* TinkererPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5A8E29D9577500171224 /* TinkererPerk.swift */; };
+		083D5A9129D971C400171224 /* Pirata_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 083D5A9029D971C400171224 /* Pirata_One.ttf */; };
 		087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */; };
 		0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4429D671E200B53B51 /* perkIcons.xcassets */; };
 		0880DD4B29D67BB100B53B51 /* PirataOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */; };
@@ -32,6 +36,10 @@
 		0807294C29D7E6FF00647877 /* BerserkerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerserkerPerk.swift; sourceTree = "<group>"; };
 		0814571229D1AA77000D5DA9 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentDirectory.swift"; sourceTree = "<group>"; };
+		083D5A8A29D93A2F00171224 /* MindthiefPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindthiefPerk.swift; sourceTree = "<group>"; };
+		083D5A8C29D942F300171224 /* ScoundrelPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoundrelPerk.swift; sourceTree = "<group>"; };
+		083D5A8E29D9577500171224 /* TinkererPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkererPerk.swift; sourceTree = "<group>"; };
+		083D5A9029D971C400171224 /* Pirata_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pirata_One.ttf; sourceTree = "<group>"; };
 		087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = classIcons.xcassets; sourceTree = "<group>"; };
 		0880DD4429D671E200B53B51 /* perkIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = perkIcons.xcassets; sourceTree = "<group>"; };
 		0880DD4929D6780B00B53B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +92,7 @@
 			children = (
 				0880DD4929D6780B00B53B51 /* Info.plist */,
 				0880DD4A29D67BB100B53B51 /* PirataOne-Regular.ttf */,
+				083D5A9029D971C400171224 /* Pirata_One.ttf */,
 				0882E44929A79E2F00FB277E /* CardFlipApp.swift */,
 				28C7D23C29B9047300073C6D /* AppDelegate.swift */,
 				0882E44B29A79E2F00FB277E /* ContentView.swift */,
@@ -118,6 +127,9 @@
 				0807294C29D7E6FF00647877 /* BerserkerPerk.swift */,
 				2878AE9D29D9021900DBE245 /* CragheartPerk.swift */,
 				2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */,
+				083D5A8A29D93A2F00171224 /* MindthiefPerk.swift */,
+				083D5A8C29D942F300171224 /* ScoundrelPerk.swift */,
+				083D5A8E29D9577500171224 /* TinkererPerk.swift */,
 			);
 			path = Perk;
 			sourceTree = "<group>";
@@ -182,6 +194,7 @@
 			files = (
 				0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */,
 				0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */,
+				083D5A9129D971C400171224 /* Pirata_One.ttf in Resources */,
 				0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */,
 				087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */,
 				0880DD4B29D67BB100B53B51 /* PirataOne-Regular.ttf in Resources */,
@@ -205,10 +218,13 @@
 				0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */,
 				2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */,
 				0814571329D1AA77000D5DA9 /* Decks.swift in Sources */,
+				083D5A8F29D9577500171224 /* TinkererPerk.swift in Sources */,
 				28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */,
 				0807294D29D7E6FF00647877 /* BerserkerPerk.swift in Sources */,
 				2889105B29CA46BF000D1877 /* PerkView.swift in Sources */,
 				282EFE2929AF65B000F706F0 /* DeckView.swift in Sources */,
+				083D5A8B29D93A3000171224 /* MindthiefPerk.swift in Sources */,
+				083D5A8D29D942F300171224 /* ScoundrelPerk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
