@@ -13,6 +13,10 @@
 		083D5A8B29D93A3000171224 /* MindthiefPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5A8A29D93A2F00171224 /* MindthiefPerk.swift */; };
 		083D5A8D29D942F300171224 /* ScoundrelPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5A8C29D942F300171224 /* ScoundrelPerk.swift */; };
 		083D5A8F29D9577500171224 /* TinkererPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5A8E29D9577500171224 /* TinkererPerk.swift */; };
+		084871FF29DAA25800C0CB46 /* PlagueHeraldPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084871FE29DAA25800C0CB46 /* PlagueHeraldPerk.swift */; };
+		0848720129DAA7A400C0CB46 /* QuartermasterPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848720029DAA7A400C0CB46 /* QuartermasterPerk.swift */; };
+		0848720329DAAB7300C0CB46 /* SawbonesPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848720229DAAB7300C0CB46 /* SawbonesPerk.swift */; };
+		0848720529DAAE2F00C0CB46 /* SoothsingerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848720429DAAE2F00C0CB46 /* SoothsingerPerk.swift */; };
 		0873D95029DA9BFD00C26804 /* BeastTyrantPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873D94F29DA9BFD00C26804 /* BeastTyrantPerk.swift */; };
 		0873D95229DA9C0700C26804 /* DoomstalkerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */; };
 		0873D95429DA9C1000C26804 /* ElementalistPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873D95329DA9C1000C26804 /* ElementalistPerk.swift */; };
@@ -44,6 +48,10 @@
 		083D5A8A29D93A2F00171224 /* MindthiefPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindthiefPerk.swift; sourceTree = "<group>"; };
 		083D5A8C29D942F300171224 /* ScoundrelPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoundrelPerk.swift; sourceTree = "<group>"; };
 		083D5A8E29D9577500171224 /* TinkererPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinkererPerk.swift; sourceTree = "<group>"; };
+		084871FE29DAA25800C0CB46 /* PlagueHeraldPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlagueHeraldPerk.swift; sourceTree = "<group>"; };
+		0848720029DAA7A400C0CB46 /* QuartermasterPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuartermasterPerk.swift; sourceTree = "<group>"; };
+		0848720229DAAB7300C0CB46 /* SawbonesPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SawbonesPerk.swift; sourceTree = "<group>"; };
+		0848720429DAAE2F00C0CB46 /* SoothsingerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoothsingerPerk.swift; sourceTree = "<group>"; };
 		0873D94F29DA9BFD00C26804 /* BeastTyrantPerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastTyrantPerk.swift; sourceTree = "<group>"; };
 		0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoomstalkerPerk.swift; sourceTree = "<group>"; };
 		0873D95329DA9C1000C26804 /* ElementalistPerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementalistPerk.swift; sourceTree = "<group>"; };
@@ -143,6 +151,10 @@
 				0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */,
 				0873D95329DA9C1000C26804 /* ElementalistPerk.swift */,
 				0873D95529DA9C1A00C26804 /* NightshroudPerk.swift */,
+				084871FE29DAA25800C0CB46 /* PlagueHeraldPerk.swift */,
+				0848720029DAA7A400C0CB46 /* QuartermasterPerk.swift */,
+				0848720229DAAB7300C0CB46 /* SawbonesPerk.swift */,
+				0848720429DAAE2F00C0CB46 /* SoothsingerPerk.swift */,
 				287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */,
 				28D1275529DA579C00282229 /* SummonerPerk.swift */,
 			);
@@ -231,11 +243,14 @@
 				2878AE9E29D9021900DBE245 /* CragheartPerk.swift in Sources */,
 				28FD47FB29D101C300C566BD /* CharacterCreation.swift in Sources */,
 				0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */,
+				084871FF29DAA25800C0CB46 /* PlagueHeraldPerk.swift in Sources */,
 				2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */,
+				0848720129DAA7A400C0CB46 /* QuartermasterPerk.swift in Sources */,
 				28D1275629DA579C00282229 /* SummonerPerk.swift in Sources */,
 				0814571329D1AA77000D5DA9 /* Decks.swift in Sources */,
 				083D5A8F29D9577500171224 /* TinkererPerk.swift in Sources */,
 				28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */,
+				0848720529DAAE2F00C0CB46 /* SoothsingerPerk.swift in Sources */,
 				0873D95629DA9C1A00C26804 /* NightshroudPerk.swift in Sources */,
 				0807294D29D7E6FF00647877 /* BerserkerPerk.swift in Sources */,
 				2889105B29CA46BF000D1877 /* PerkView.swift in Sources */,
@@ -245,6 +260,7 @@
 				083D5A8D29D942F300171224 /* ScoundrelPerk.swift in Sources */,
 				0873D95229DA9C0700C26804 /* DoomstalkerPerk.swift in Sources */,
 				0873D95029DA9BFD00C26804 /* BeastTyrantPerk.swift in Sources */,
+				0848720329DAAB7300C0CB46 /* SawbonesPerk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

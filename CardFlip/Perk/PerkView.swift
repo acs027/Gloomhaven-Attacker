@@ -47,7 +47,7 @@ struct plusZero: View {
                 .stroke(Color.black, lineWidth: 2)
                 .frame(width: 23)
             Text("+0")
-                .font(.custom("Pirata_One", size: 18))
+                .font(.custom("PirataOne-Regular", size: 18))
         }
     }
 }
@@ -88,6 +88,18 @@ struct plusThree: View {
     }
 }
 
+struct plusFour: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.black, lineWidth: 2)
+                .frame(width: 23)
+            Text("+4")
+                .font(.custom("PirataOne-Regular", size: 18))
+        }
+    }
+}
+
 struct PerkView: View {
     @ObservedObject var deck: Deck
     var body: some View {
@@ -107,7 +119,22 @@ struct PerkView: View {
                 CragheartPerk(deck: deck)
             case "Berserker":
                 BerserkerPerk(deck: deck)
-            
+            case "BeastTyrant":
+                BeastTyrantPerk(deck: deck)
+            case "Doomstalker":
+                DoomstalkerPerk(deck: deck)
+            case "Elementalist":
+                ElementalistPerk(deck: deck)
+            case "Nightshroud":
+                NightshroudPerk(deck: deck)
+            case "Plagueherald":
+                PlagueHeraldPerk(deck: deck)
+            case "Quartermaster":
+                QuartermasterPerk(deck: deck)
+            case "Sawbones":
+                SawbonesPerk(deck: deck)
+            case "Soothsinger":
+                SoothsingerPerk(deck: deck)
             case "Summoner":
                 SummonerPerk(deck: deck)
             case "Sunkeeper":
