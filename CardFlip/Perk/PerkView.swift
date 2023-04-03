@@ -47,7 +47,7 @@ struct plusZero: View {
                 .stroke(Color.black, lineWidth: 2)
                 .frame(width: 23)
             Text("+0")
-                .font(.custom("Pirata_One", size: 18))
+                .font(.custom("PirataOne-Regular", size: 18))
         }
     }
 }
