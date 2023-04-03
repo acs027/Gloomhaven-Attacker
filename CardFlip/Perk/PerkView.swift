@@ -107,6 +107,11 @@ struct PerkView: View {
                 CragheartPerk(deck: deck)
             case "Berserker":
                 BerserkerPerk(deck: deck)
+            
+            case "Summoner":
+                SummonerPerk(deck: deck)
+            case "Sunkeeper":
+                SunkeeperPerk(deck: deck)
                 
             default:
                 Text("---")
