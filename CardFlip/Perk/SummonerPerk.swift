@@ -63,11 +63,12 @@ struct SummonerPerk: View {
                                 Text("Replace one")
                                 minusOne()
                                 Text("card with one")
-                                plusOne()
                             }
                             HStack {
-                                Text(" card")
+                                plusOne()
+                                Text("card")
                             }
+                            .padding(.horizontal)
                         }
                         
                         Spacer()
@@ -262,81 +263,54 @@ struct SummonerPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("plusOne")
-            deck.removeCard("plusOne")
-        } else {
-            deck.addCard("plusOne")
-            deck.addCard("plusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
+    
     // Replace one (-2) card with one (+0) card
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            deck.addCard("zero")
-            deck.removeCard("minusTwo")
-        } else {
-            deck.removeCard("zero")
-            deck.addCard("minusTwo")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "Summonerzero", cardNameB: "minusTwo")
     }
     
     //Replace one -1 card with one +1 card
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "SummonerplusOne", cardNameB: "minusOne")
     }
     
     // Add one (+2) card
     func rowFour(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusTwo")
-        } else {
-            deck.removeCard("plusTwo")
-        }
+        deck.autoCard(condition: condition, cardName: "SummonerplusTwo")
     }
     
     //Add two rolling WOUND cards
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SummonerWound", count: 2)
     }
     
     //Add two rolling POISON cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SummonerPoison", count: 2)
     }
     
     //Add two rolling HEAL 1 cards
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SummonerHeal", count: 2)
     }
     
     // Add one rolling FIRE and one rolling WIND card
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SummonerFire")
+        deck.autoCard(condition: condition, cardName: "SummonerWind")
     }
     
     // Add one rolling DARK and one rolling EARTH card
-    func rowNine(condition :Bool) {
-        
+    func rowNine(condition: Bool) {
+        deck.autoCard(condition: condition, cardName: "SummonerDark")
+        deck.autoCard(condition: condition, cardName: "SummonerEarth")
     }
     
     //Ignore negative scenario effects and add two +1 cards
     func rowTen(condition: Bool) {
-        
-    }
-    //Nil
-    func rowEleven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SummonerplusOne", count: 2)
     }
 }
 

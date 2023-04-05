@@ -113,7 +113,7 @@ struct BeastTyrantPerk: View {
                     
                     HStack {
                         //add one +1 wound  card
-                        Text("Add two")
+                        Text("Add one")
                         plusOne()
                         Text("WOUND")
                         Image("wound").perkIconMod()
@@ -235,65 +235,42 @@ struct BeastTyrantPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("minusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.addCard("minusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
+    
     //Replace one -1 card with one +1 card
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "BeastTyrantplusOne", cardNameB: "minusOne")
     }
     
     //replace one +0 card with one +2 card
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "BeastTyrantplusTwo", cardNameB: "zero")
     }
     
     //add one +1 wound  card
     func rowFour(condition: Bool) {
-        
-        
+        deck.autoCard(condition: condition, cardName: "BeastTyrantWound")
     }
     
     //add one +1 immobilize card
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BeastTyrantImmob")
     }
     
     //add two rolling heal 1 cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BeastTyrantHeal", count: 2)
     }
     
     //add two rolling earth cards
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BeastTyrantEarth", count: 2)
     }
     
     //ignore scenario scenario effects
     func rowEight(condition: Bool) {
-        
+        deck.refresh()
     }
 }
 

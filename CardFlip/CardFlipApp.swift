@@ -2,7 +2,7 @@
 //  CardFlipApp.swift
 //  CardFlip
 //
-//  Created by ali cihan saraç on 23.02.2023.
+//  Created by ali cihan on 23.02.2023.
 //
 
 import SwiftUI

@@ -21,7 +21,7 @@ struct MindthiefPerk: View {
                 Text(String(deck.cards.count))
                 Group {
                     HStack{
-                        //Remove two -1 cards
+                        // MARK: Remove two -1 cards
                         Text("Remove two")
                         minusOne()
                         Text("cards")
@@ -44,7 +44,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //Remove four +0 cards
+                        //MARK: Remove four +0 cards
                         Text("Remove four")
                         plusZero()
                         Text("cards")
@@ -60,7 +60,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //Replace two +1 cards with two +2 cards
+                        //MARK: Replace two +1 cards with two +2 cards
                         VStack(alignment: .leading, spacing: 0) {
                             HStack {
                                 Text("Replace two")
@@ -85,13 +85,12 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //replace one -2 card with one rolling +0 card
+                        //MARK: replace one -2 card with one +0 card
                         VStack(alignment: .leading, spacing: 0) {
                             HStack {
                                 Text("Replace one")
                                 minusTwo()
                                 Text("card with one")
-                                Image("rolling").perkIconMod()
                                 plusZero()
                             }
                             HStack {
@@ -111,7 +110,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //add one +2 frost card
+                        //MARK: add one +2 frost card
                         Text("Add one")
                         plusTwo()
                         Image("frost").perkIconMod()
@@ -136,7 +135,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //add two rolling +1 cards
+                        //MARK: add two rolling +1 cards
                         Text("Add two")
                         Image("rolling").perkIconMod()
                         plusOne()
@@ -161,7 +160,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //add three rolling pull 1 cards
+                        //MARK: add three rolling pull 1 cards
                         Text("Add three")
                         Image("rolling").perkIconMod()
                         Text("PULL")
@@ -180,7 +179,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        // add three rolling muddle cards
+                        //MARK: add three rolling muddle cards
                         Text("Add three")
                         Image("rolling").perkIconMod()
                         Text("MUDDLE")
@@ -199,7 +198,7 @@ struct MindthiefPerk: View {
                     }
                     
                     HStack {
-                        //add two rolling immobilize cards
+                        //MARK: add two rolling immobilize cards
                         Text("Add two")
                         Image("rolling").perkIconMod()
                         Text("IMMOBILIZE")
@@ -218,7 +217,7 @@ struct MindthiefPerk: View {
                     }
                     Group {
                         HStack {
-                            // Add one rolling stun card
+                            //MARK: Add one rolling stun card
                             Text("Add one")
                             Image("rolling").perkIconMod()
                             Text("STUN")
@@ -237,7 +236,7 @@ struct MindthiefPerk: View {
                         }
                         
                         HStack {
-                            // Add one rolling disarm and one rolling muddle card
+                            //MARK: Add one rolling disarm and one rolling muddle card
                             VStack(alignment: .leading, spacing: 0) {
                                 HStack {
                                     Text("Add one")
@@ -289,77 +288,63 @@ struct MindthiefPerk: View {
     }
     //Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("minusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.addCard("minusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
+
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
-    //Replace two +1 cards with two +2 cards
+    // Replace two +1 cards with two +2 cards
     func rowThree(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "MindthiefplusTwo", countA: 2, cardNameB: "plusOne", countB: 2)
     }
     
-    // replace one -2 card with one rolling +0 card
+    // replace one -2 card with one +0 card
     func rowFour(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "Mindthiefzero", cardNameB: "minusTwo")
     }
     
     // add one +2 frost card
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefFrost")
     }
     
     // add two rolling +1 cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefRollingplusOne", count: 2)
     }
     
     // add three rolling pull 1 cards
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefPush", count: 3)
     }
     
     // add three rolling muddle cards
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefMuddle", count: 3)
     }
     
     // add two rolling immobilize cards
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefImmob", count: 2)
     }
     
     // Add one rolling stun card
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefStun")
     }
     
     // Add one rolling disarm and one rolling muddle card
     func rowEleven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "MindthiefDisarm")
+        deck.autoCard(condition: condition, cardName: "MindthiefMuddle")
     }
     
     // Ignore negative scenario effects
     func rowTwelve(condition: Bool) {
-        
+        deck.refresh()
     }
 
 

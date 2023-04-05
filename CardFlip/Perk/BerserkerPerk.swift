@@ -2,7 +2,7 @@
 //  BerserkerPerk.swift
 //  CardFlip
 //
-//  Created by ali cihan saraç on 1.04.2023.
+//  Created by ali cihan on 1.04.2023.
 //
 
 import SwiftUI
@@ -255,75 +255,51 @@ struct BerserkerPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("minusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.addCard("minusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
     // Replace one -1 card with one +1 card
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "BerserkerplusOne", cardNameB: "minusOne")
     }
     
     // Replace one +0 card with one rolling +2 card
     func rowFour(condition: Bool) {
-        
-        
+        deck.autoRepCard(condition: condition, cardNameA: "BerserkerplusTwo", cardNameB: "zero")
     }
     
     // Add two rolling wound cards
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BerserkerWound", count: 2)
     }
     
     // Add one rolling stun card
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BerserkerStun")
     }
     
     // Add one rolling +1 disarm card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BerserkerDisarm")
     }
     
     // Add two rolling heal 1 cards
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BerserkerHeal", count: 2)
     }
     
     // Add one +2 fire card
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "BerserkerFire")
     }
     
     // Ignore negative item effects
     func rowTen(condition: Bool) {
-        
+        deck.refresh()
     }
 }
 

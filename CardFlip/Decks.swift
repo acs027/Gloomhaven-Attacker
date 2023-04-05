@@ -2,7 +2,7 @@
 //  Decks.swift
 //  CardFlip
 //
-//  Created by ali cihan saraç on 27.03.2023.
+//  Created by ali cihan on 27.03.2023.
 //
 
 import SwiftUI

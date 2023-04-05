@@ -98,18 +98,11 @@ class Card: Identifiable, Codable {
     required init(from decoder: Decoder)  throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         self.cards = try values.decode([Card].self, forKey: .cards)
-//        self.animationSpeed = try values.decode(Double.self, forKey: .animationSpeed)
-//        self.id = try values.decode(UUID.self, forKey: .id)
         self.buttonArray = try values.decode([Bool].self, forKey: .buttonArray)
-        
         self.isShuffle = try values.decode(Bool.self, forKey: .isShuffle)
         self.discardCount = try values.decode(Int.self, forKey: .discardCount)
-        
         self.characterName = try values.decode(String.self, forKey: .characterName)
         self.characterClass = try values.decode(String.self, forKey: .characterClass)
-        
-//        self.cardHeight = try values.decode(CGFloat.self, forKey: .cardHeight)
-        
         self.curseCount = try values.decode(Int.self, forKey: .curseCount)
         self.blessCount = try values.decode(Int.self, forKey: .blessCount)
         self.minusoneCount = try values.decode(Int.self, forKey: .minusoneCount)
@@ -265,17 +258,49 @@ class Card: Identifiable, Codable {
         isShuffle = false
     }
     
-    func addCard(_ cardName: String){
-        let newCard = Card()
-        newCard.cardName = cardName
+    func addCard(cardName: String, count: Int = 1){
         
-        cards.append(newCard)
-    }
-    func removeCard(_ cardName: String){
-        if let index = cards.firstIndex(where: {$0.cardName == cardName}) {
-            cards.remove(at: index)
+        for _ in 0..<count {
+            let newCard = Card()
+            newCard.cardName = cardName
+            cards.append(newCard)
         }
     }
+    
+    func removeCard(cardName: String, count: Int = 1){
+        for _ in 0..<count {
+            if let index = cards.firstIndex(where: {$0.cardName == cardName}) {
+                cards.remove(at: index)
+            }
+        }
+    }
+    
+    func replaceCard(addCardName: String, addCount: Int = 1, remCardName: String, remCount: Int = 1) {
+        addCard(cardName: addCardName, count: addCount)
+        removeCard(cardName: remCardName, count: remCount)
+    }
+    
+    func autoCard(condition: Bool, cardName: String, count: Int = 1) {
+        if condition {
+            addCard(cardName: cardName, count: count)
+        } else {
+            removeCard(cardName: cardName, count: count)
+        }
+    }
+    
+    func autoRepCard(condition: Bool, cardNameA: String, countA: Int = 1, cardNameB: String, countB: Int = 1) {
+        if condition {
+            replaceCard(addCardName: cardNameA, addCount: countA, remCardName: cardNameB, remCount: countB)
+        } else {
+            replaceCard(addCardName: cardNameB, addCount: countB, remCardName: cardNameA, remCount: countA)
+        }
+    }
+    
+    func refresh() {
+        objectWillChange.send()
+    }
+    
+    
     
     func characterCreation(_ name: String, _ klass: String){
         objectWillChange.send()

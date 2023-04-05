@@ -264,78 +264,59 @@ struct SpellweaverPerk: View {
     }
     // Remove four +0 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
+ 
     // Replace one -1 card with one +1 card
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "SpellweaverplusOne", cardNameB: "minusOne")
     }
+
     
     // Add two +1 cards
     func rowThree(condition: Bool) {
+        deck.autoCard(condition: condition, cardName: "SpellweaverplusOne", count: 2)
         
-        if condition {
-            deck.addCard("plusOne")
-            deck.addCard("plusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.removeCard("plusOne")
-        }
     }
-    
-    // Replace one -1 card with one +1 card
+    //add one +0 stun card
     func rowFour(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverStun")
     }
     
-    // Add two rolling wound cards
+    //add one +1 wound card
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverWound")
     }
     
-    // Add one rolling stun card
+    //add one +1 immobilize card
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverImmob")
     }
     
-    // Add one rolling +1 disarm card
+    //add one +1 curse card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverCurse")
     }
     
-    // Add two rolling heal 1 cards
+    //add one +2 fire card
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverFire")
     }
     
-    // Add one +2 fire card
+    //add one +2 frost card
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverFrost")
     }
     
-    // Ignore negative item effects
+    //Add one rolling earth and one rolling wind card
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverEarth")
+        deck.autoCard(condition: condition, cardName: "SpellweaverWind")
     }
-    // Ignore negative item effects
+    //Add one rolling sun and one rolling dark card
     func rowEleven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SpellweaverSun")
+        deck.autoCard(condition: condition, cardName: "SpellweaverDark")
     }
 }
 

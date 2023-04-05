@@ -270,52 +270,51 @@ struct PlagueHeraldPerk: View {
     }
     // Replace one -2 card with one +0 card --1
     func rowOne(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "Plagueheraldzero", cardNameB: "minusTwo")
     }
     // Replace one -1 card with one +1 card --2
     func rowTwo(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "PlagueheraldplusOne", cardNameB: "minusOne")
     }
     
     // Replace one +0 card with one +2 card --2
     func rowThree(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "PlagueheraldplusTwo", cardNameB: "zero")
     }
     
     // Add two +1 cards --1
     func rowFour(condition: Bool) {
-        
-        
+        deck.autoCard(condition: condition, cardName: "PlagueheraldplusOne", count: 2)
     }
     
     // Add one +1 wind card --3
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "PlagueheraldWind")
     }
     
     // Add three rolling poison cards --1
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "PlagueheraldPoison", count: 3)
     }
     
     // Add two rolling curse cards --1
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "PlagueheraldCurse", count: 2)
     }
     
     // Add two rolling immobilize cards --1
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "PlagueheraldImmob", count: 2)
     }
     
     // Add one rolling stun card --2
-    func rowNine(condition :Bool) {
-        
+    func rowNine(condition: Bool) {
+        deck.autoCard(condition: condition, cardName: "PlagueheraldStun")
     }
     
     // Ignore negative scenario effects and add one +1 card --1
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "PlagueheraldplusOne")
     }
 }
 

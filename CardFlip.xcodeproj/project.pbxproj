@@ -17,6 +17,7 @@
 		0848720129DAA7A400C0CB46 /* QuartermasterPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848720029DAA7A400C0CB46 /* QuartermasterPerk.swift */; };
 		0848720329DAAB7300C0CB46 /* SawbonesPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848720229DAAB7300C0CB46 /* SawbonesPerk.swift */; };
 		0848720529DAAE2F00C0CB46 /* SoothsingerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0848720429DAAE2F00C0CB46 /* SoothsingerPerk.swift */; };
+		0851AB6929DD372A00056AAA /* classPerkCards.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0851AB6829DD372A00056AAA /* classPerkCards.xcassets */; };
 		0873D95029DA9BFD00C26804 /* BeastTyrantPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873D94F29DA9BFD00C26804 /* BeastTyrantPerk.swift */; };
 		0873D95229DA9C0700C26804 /* DoomstalkerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */; };
 		0873D95429DA9C1000C26804 /* ElementalistPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0873D95329DA9C1000C26804 /* ElementalistPerk.swift */; };
@@ -52,6 +53,7 @@
 		0848720029DAA7A400C0CB46 /* QuartermasterPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuartermasterPerk.swift; sourceTree = "<group>"; };
 		0848720229DAAB7300C0CB46 /* SawbonesPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SawbonesPerk.swift; sourceTree = "<group>"; };
 		0848720429DAAE2F00C0CB46 /* SoothsingerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoothsingerPerk.swift; sourceTree = "<group>"; };
+		0851AB6829DD372A00056AAA /* classPerkCards.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = classPerkCards.xcassets; sourceTree = "<group>"; };
 		0873D94F29DA9BFD00C26804 /* BeastTyrantPerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeastTyrantPerk.swift; sourceTree = "<group>"; };
 		0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoomstalkerPerk.swift; sourceTree = "<group>"; };
 		0873D95329DA9C1000C26804 /* ElementalistPerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementalistPerk.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				28FD47FA29D101C300C566BD /* CharacterCreation.swift */,
 				2889105829CA46BF000D1877 /* Perk */,
 				0882E44D29A79E3100FB277E /* Assets.xcassets */,
+				0851AB6829DD372A00056AAA /* classPerkCards.xcassets */,
 				0880DD4429D671E200B53B51 /* perkIcons.xcassets */,
 				087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */,
 				0882E44F29A79E3100FB277E /* Preview Content */,
@@ -155,8 +158,8 @@
 				0848720029DAA7A400C0CB46 /* QuartermasterPerk.swift */,
 				0848720229DAAB7300C0CB46 /* SawbonesPerk.swift */,
 				0848720429DAAE2F00C0CB46 /* SoothsingerPerk.swift */,
-				287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */,
 				28D1275529DA579C00282229 /* SummonerPerk.swift */,
+				287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */,
 			);
 			path = Perk;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			files = (
 				0873D95829DA9C4700C26804 /* PirataOne-Regular.ttf in Resources */,
 				0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */,
+				0851AB6929DD372A00056AAA /* classPerkCards.xcassets in Resources */,
 				0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */,
 				0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */,
 				087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */,
