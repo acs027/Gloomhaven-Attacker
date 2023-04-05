@@ -195,9 +195,19 @@ struct QuartermasterPerk: View {
                     
                     HStack {
                         //add one +0 Refresh and item card
-                        Text("Add one")
-                        plusZero()
-                        Text("Refresh and item card")
+                        
+                        
+                        VStack(alignment: .leading, spacing: 0) {
+                            HStack {
+                                Text("Add one")
+                                plusZero()
+                                Text("Refresh and")
+                            }
+                            HStack {
+                                Text("item card")
+                            }
+                            .padding(.horizontal)
+                        }
                         
                         Spacer()
                         
@@ -254,75 +264,51 @@ struct QuartermasterPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("minusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.addCard("minusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
     // Replace one +0 card with one +2 card
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "QuartermasterplusTwo", cardNameB: "zero")
     }
     
     // Add two rolling +1 cards
     func rowFour(condition: Bool) {
-        
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterRollingplusOne", count: 2)
     }
     
     //add three rolling muddle  cards
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterMuddle", count: 3)
     }
     
     //add two rolling pierce 3 cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterPierce", count: 2)
     }
     
     //add one rolling stun card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterStun")
     }
     
     //add one rolling add_target card
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterAddTarget")
     }
     
     //add one +0 Refresh and item card
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterRefreshItem")
     }
     
     //ignore negative item effects and add two +1 cards
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "QuartermasterplusOne", count: 2)
     }
 }
 

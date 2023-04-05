@@ -273,56 +273,56 @@ struct ScoundrelPerk: View {
     }
     //Remove two -1 cards
     func rowOne(condition: Bool) {
-
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
     // Replace one -2 card with one +0 card
     func rowThree(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "Scoundrelzero", cardNameB: "minusTwo")
     }
     
     // replace one -1 card with one +1 card
     func rowFour(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "ScoundrelplusOne", cardNameB: "minusOne")
     }
     
     // replace one +0 card with one +2 card
     func rowFive(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "ScoundrelplusTwo", cardNameB: "zero")
     }
     
     // add two rolling +1 cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ScoundrelRollingplusOne", count: 2)
     }
     
     // add two rolling pierce 3 cards
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ScoundrelPierce", count: 2)
     }
     
     // add two rolling poison cards
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ScoundrelPoison", count: 2)
     }
     
     // add two rolling muddle cards
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ScoundrelMuddle", count: 2)
     }
     
     // add one rolling invisible card
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ScoundrelInvis")
     }
     
     // Ignore negative scenario effects
     func rowEleven(condition: Bool) {
-        
+        deck.refresh()
     }
 
 }

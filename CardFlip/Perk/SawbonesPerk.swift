@@ -13,7 +13,7 @@ struct SawbonesPerk: View {
     
     var body: some View {
         ZStack {
-            Image("quartermaster")
+            Image("sawbones")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
@@ -237,70 +237,46 @@ struct SawbonesPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("minusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.addCard("minusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
     // Replace one +0 card with one +2 card
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "SawbonesplusTwo", cardNameB: "zero")
     }
     
     // Add one rolling +2 card --2
     func rowFour(condition: Bool) {
-        
-        
+        deck.autoCard(condition: condition, cardName: "SawbonesRollingplusTwo")
     }
     
     //add one +1 immobilize card --2
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SawbonesImmob")
     }
     
     //add two rolling wound cards --2
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SawbonesWound", count: 2)
     }
     
     //add one rolling stun card --1
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SawbonesStun")
     }
     
     //add one rolling heal 3 card --2
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SawbonesHeal")
     }
     
     //add one +0 Refresh and item card --1
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SawbonesRefreshItem")
     }
 }
 

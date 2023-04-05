@@ -2,7 +2,7 @@
 //  cragheartPerk.swift
 //  CardFlip
 //
-//  Created by ali cihan saraç on 1.04.2023.
+//  Created by ali cihan on 1.04.2023.
 //
 
 import SwiftUI
@@ -123,9 +123,9 @@ struct CragheartPerk: View {
                     }
                     
                     HStack {
-                        //add one +1 muddle card
+                        //add one +2 muddle card
                         Text("Add one")
-                        plusOne()
+                        plusTwo()
                         Text("MUDDLE")
                         Image("muddle").perkIconMod()
                         Text("card")
@@ -248,81 +248,53 @@ struct CragheartPerk: View {
     }
     // Remove four +0 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
+    
     // Replace one -1 card with one +1 card
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "CragheartplusOne", cardNameB: "minusOne")
     }
     
     // Add one -2 card and two +2 cards
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: condition, cardName: "minusTwo")
+        deck.autoCard(condition: condition, cardName: "CragheartplusTwo", count: 2)
     }
     
-    // Replace one -1 card with one +1 card
+    //add one +1 immobilize card
     func rowFour(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: condition, cardName: "CragheartImmob")
     }
     
-    // Add two rolling wound cards
+    //add one +2 muddle card
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "CragheartMuddle")
     }
     
-    // Add one rolling stun card
+    //add two rolling push 2 cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "CragheartPush", count: 2)
     }
     
-    // Add one rolling +1 disarm card
+    //add two rolling earth card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "CragheartEarth", count: 2)
     }
     
-    // Add two rolling heal 1 cards
+    //add two rolling wind cards
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "CragheartWind", count: 2)
     }
     
-    // Add one +2 fire card
+    //ignore negative item effects
     func rowNine(condition :Bool) {
-        
+        deck.refresh()
     }
     
-    // Ignore negative item effects
+    //ignore scenario scenario effects
     func rowTen(condition: Bool) {
-        
+        deck.refresh()
     }
 }
 

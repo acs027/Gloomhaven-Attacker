@@ -17,6 +17,7 @@ struct SoothsingerPerk: View {
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
+            ScrollView {
             VStack {
                 Text(String(deck.cards.count))
                 Group {
@@ -334,65 +335,66 @@ struct SoothsingerPerk: View {
                 }
             }
         }
+        }
         .padding(.horizontal)
     }
     //Remove two -1 cards
     func rowOne(condition: Bool) {
-  
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove one -2 card --1
     func rowTwo(condition: Bool) {
-        
+        deck.autoCard(condition: !condition, cardName: "minusTwo")
     }
     
     // Replace two +1 cards with one +4 card --2
     func rowThree(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerplusFour", countA: 1, cardNameB: "plusOne", countB: 2)
     }
     
     // Replace one +0 card with one +1 immobilize card --1
     func rowFour(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerImmob", cardNameB: "zero")
     }
     
     // Replace one +0 card with one +1 Disarm card --1
     func rowFive(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerDisarm", cardNameB: "zero")
     }
     
     // Replace one +0 card with one +2 wound card --1
     func rowSix(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerWound", cardNameB: "zero")
     }
     
     // Replace one +0 card with one +2 poison card --1
     func rowSeven(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerPoison", cardNameB: "zero")
     }
     
     // Replace one +0 card with one +2 curse card --1
     func rowEight(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerCurse", cardNameB: "zero")
     }
     
     // Replace one +0 card with one +3 muddle card --1
     func rowNine(condition :Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerMuddle", cardNameB: "zero")
     }
     
     // Replace one -1 card with one +0 stun card --1
     func rowTen(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "SoothsingerStun", cardNameB: "minusOne")
     }
     
     // add three rolling +1 cards --1
     func rowEleven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SoothsingerRollingplusOne", count: 3)
     }
     
     // Add two rolling curse cards --2
     func rowTwelve(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SoothsingerRollingCurse", count: 2)
     }
 }
 

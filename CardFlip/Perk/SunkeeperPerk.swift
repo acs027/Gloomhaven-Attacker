@@ -256,85 +256,55 @@ struct SunkeeperPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("plusOne")
-            deck.removeCard("plusOne")
-        } else {
-            deck.addCard("plusOne")
-            deck.addCard("plusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
     //Replace one -2 card with one +0 card
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("zero")
-            deck.removeCard("minusTwo")
-        } else {
-            deck.removeCard("zero")
-            deck.addCard("minusTwo")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "Sunkeeperzero", cardNameB: "minusTwo")
     }
     
     //Replace one +0 card with one +2 card
     func rowFour(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusTwo")
-            deck.removeCard("zero")
-        } else {
-            deck.removeCard("plusTwo")
-            deck.addCard("zero")
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "SunkeeperplusTwo", cardNameB: "zero")
     }
     
     //Add two rolling (+1) cards
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SunkeeperRollingplusOne", count: 2)
     }
     
     //Add two rolling HEAL 1 cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SunkeeperHeal", count: 2)
     }
     
     //Add one rolling STUN card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SunkeeperStun")
     }
     
     //Add two rolling SUN card
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SunkeeperSun", count: 2)
     }
     
     //Add two rolling Shield 1, Self cards
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SunkeeperShield", count: 2)
     }
     
     //Ignore negative item effects and add two (+1) cards
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "SunkeeperplusOne", count: 2)
     }
     //Ignore negative scenario effects
     func rowEleven(condition: Bool) {
-        
+        deck.refresh()
     }
 }
 

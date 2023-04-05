@@ -253,56 +253,56 @@ struct TinkererPerk: View {
     }
     //Remove two -1 cards
     func rowOne(condition: Bool) {
-
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Replace one -2 card with one +0 card
     func rowTwo(condition: Bool) {
-
+        deck.autoRepCard(condition: condition, cardNameA: "Tinkererzero", cardNameB: "minusTwo")
     }
     
     // Add two +1 cards
     func rowThree(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererplusOne", count: 2)
     }
     
     // Add one +3 card
     func rowFour(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererplusThree")
     }
     
     // Add two rolling fire cards
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererFire", count: 2)
     }
     
     // Add three rolling muddle cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererMuddle", count: 3)
     }
     
     // Add one +1 wound card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererWound")
     }
     
     // add one +1 immobilize card
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererImmob")
     }
     
     // add one +1 heal 2 card
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererHeal")
     }
     
     // add one +0 add target card
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "TinkererAddTarget")
     }
     
     // Ignore negative scenario effects
     func rowEleven(condition: Bool) {
-        
+        deck.refresh()
     }
 
 }

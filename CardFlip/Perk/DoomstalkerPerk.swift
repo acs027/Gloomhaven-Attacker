@@ -47,7 +47,7 @@ struct DoomstalkerPerk: View {
                         // Replace two +0 card with two +1 cards
                         VStack(alignment: .leading, spacing: 0) {
                             HStack {
-                                Text("Replace one")
+                                Text("Replace two")
                                 plusZero()
                                 Text("card with two")
                             }
@@ -248,75 +248,51 @@ struct DoomstalkerPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
-        if condition {
-            deck.removeCard("minusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.addCard("minusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Replace two +0 card with two +1 cards
     func rowTwo(condition: Bool) {
-        
-        if condition {
-            for _ in 1...4 {
-                deck.removeCard("zero")
-            }
-        } else {
-            for _ in 1...4 {
-                deck.addCard("zero")
-            }
-        }
+        deck.autoRepCard(condition: condition, cardNameA: "DoomstalkerplusOne", countA: 2, cardNameB: "zero", countB: 2)
     }
     
     // Add two rolling +1 cards
     func rowThree(condition: Bool) {
-        
-        if condition {
-            deck.addCard("plusOne")
-            deck.removeCard("minusOne")
-        } else {
-            deck.removeCard("plusOne")
-            deck.addCard("minusOne")
-        }
+        deck.autoCard(condition: condition, cardName: "DoomstalkerRollingplusOne", count: 2)
     }
     
     // Add one +2 muddle card
     func rowFour(condition: Bool) {
-        
-        
+        deck.autoCard(condition: condition, cardName: "DoomstalkerMuddle")
     }
     
     // Add one +1 poison card
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "DoomstalkerPoison")
     }
     
     // Add one +1 wound card
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "DoomstalkerWound")
     }
     
     // Add one +1 immobilize card
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "DoomstalkerImmob")
     }
     
     // Add one +0 stun card
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "DoomstalkerStun")
     }
     
     // Add one rolling add_target card
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "DoomstalkerAddTarget")
     }
     
     // Ignore negative scenario effects
     func rowTen(condition: Bool) {
-        
+        deck.refresh()
     }
 }
 

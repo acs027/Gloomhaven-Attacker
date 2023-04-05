@@ -75,6 +75,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[3] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
+                        .disabled(deck.buttonArray[5] || deck.buttonArray[6])
                         Button{
                             deck.buttonArray[4].toggle()
                             rowThree(condition: deck.buttonArray[4])
@@ -82,6 +83,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[4] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
+                        .disabled(deck.buttonArray[5] && deck.buttonArray[6])
                     }
                     
                     HStack {
@@ -112,6 +114,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[5] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
+                        .disabled(!deck.buttonArray[3] && !deck.buttonArray[4])
                         Button{
                             deck.buttonArray[6].toggle()
                             rowFour(condition: deck.buttonArray[6])
@@ -119,6 +122,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[6] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
+                        .disabled(!deck.buttonArray[3] || !deck.buttonArray[4])
                     }
                     
                     HStack {
@@ -261,52 +265,52 @@ struct NightshroudPerk: View {
     }
     // Remove two -1 cards
     func rowOne(condition: Bool) {
-        
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Remove four +0 cards
     func rowTwo(condition: Bool) {
-        
+        deck.autoCard(condition: !condition, cardName: "zero", count: 4)
     }
     
     // Add one -1 dark card
     func rowThree(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudminusOneDark")
     }
     
     // Replace one -1 dark card with one +1 dark card
     func rowFour(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "NightshroudplusOneDark", cardNameB: "NightshroudminusOneDark")
         
     }
     
     // Add one +1 invisible card
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudInvis")
     }
     
     // add three rolling muddle cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudMuddle", count: 3)
     }
     
     // add two rolling heal 1 cards
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudHeal", count: 2)
     }
     
     // add two rolling curse cards
     func rowEight(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudCurse", count: 2)
     }
     
     // add one rolling add_target card
     func rowNine(condition :Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudAddTarget")
     }
     
     // Ignore negative scenario effects and add two +1 cards
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "NightshroudplusOne", count: 2)
     }
 }
 

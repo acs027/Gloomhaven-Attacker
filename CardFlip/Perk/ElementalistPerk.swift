@@ -229,9 +229,9 @@ struct ElementalistPerk: View {
                             // Add two +1 push 1 cards
                             Text("Add two")
                             plusOne()
-                            Text("STUN")
-                            Image("pull").perkIconMod().rotationEffect(.degrees(-180))
-                            Text("cards")
+                            Text("PUSH")
+                            Image("push").perkIconMod()
+                            Text("1 cards")
                             
                             Spacer()
                             
@@ -310,66 +310,68 @@ struct ElementalistPerk: View {
     }
     //Remove two -1 cards
     func rowOne(condition: Bool) {
-  
+        deck.autoCard(condition: !condition, cardName: "minusOne", count: 2)
     }
     // Replace one -1 card with one +1 card
     func rowTwo(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "ElementalistplusOne", cardNameB: "minusOne")
     }
     
     // Replace one +0 card with one +2 card
     func rowThree(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "ElementalistplusTwo", cardNameB: "zero")
     }
     
     // Add three +0 fire cards
     func rowFour(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistFire", count: 3)
     }
     
     // Add three +0 frost cards
     func rowFive(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistFrost", count: 3)
     }
     
     // Add three +0 wind cards
     func rowSix(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistWind", count: 3)
     }
     
     // Add three +0 earth cards
     func rowSeven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistEarth", count: 3)
     }
     
     // Replace two +0 cards with one +0 fire and one +0 earth card
     func rowEight(condition: Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "ElementalistFire", cardNameB: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "ElementalistEarth", cardNameB: "zero")
     }
     
     // Replace two +0 cards with one +0 frost and one +0 wind card
     func rowNine(condition :Bool) {
-        
+        deck.autoRepCard(condition: condition, cardNameA: "ElementalistFrost", cardNameB: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "ElementalistWind", cardNameB: "zero")
     }
     
     // Add two +1 push 1 cards
     func rowTen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistPush", count: 2)
     }
     
     // Add one +1 wound card
     func rowEleven(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistWound")
     }
     
     // Add one +0 stun card
     func rowTwelve(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistStun")
     }
     
     // Add one +0 Add_target card
     func rowThirteen(condition: Bool) {
-        
+        deck.autoCard(condition: condition, cardName: "ElementalistAddTarget")
     }
 
 
