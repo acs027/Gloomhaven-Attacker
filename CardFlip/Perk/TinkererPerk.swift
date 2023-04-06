@@ -13,7 +13,7 @@ struct TinkererPerk: View {
     
     var body: some View {
         ZStack {
-            Image("tinkerer")
+            Image("Tinkerer")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

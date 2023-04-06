@@ -13,7 +13,7 @@ struct ElementalistPerk: View {
     
     var body: some View {
         ZStack {
-            Image("elementalist")
+            Image("Elementalist")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

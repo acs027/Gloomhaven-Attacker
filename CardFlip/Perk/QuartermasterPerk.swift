@@ -13,7 +13,7 @@ struct QuartermasterPerk: View {
     
     var body: some View {
         ZStack {
-            Image("quartermaster")
+            Image("Quartermaster")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

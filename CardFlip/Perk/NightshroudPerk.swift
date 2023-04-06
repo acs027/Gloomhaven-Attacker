@@ -13,7 +13,7 @@ struct NightshroudPerk: View {
     
     var body: some View {
         ZStack {
-            Image("nightshroud")
+            Image("Nightshroud")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

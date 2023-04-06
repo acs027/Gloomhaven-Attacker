@@ -13,7 +13,7 @@ struct SummonerPerk: View {
     
     var body: some View {
         ZStack {
-            Image("summoner")
+            Image("Summoner")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
