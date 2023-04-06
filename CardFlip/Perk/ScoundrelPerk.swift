@@ -13,7 +13,7 @@ struct ScoundrelPerk: View {
     
     var body: some View {
         ZStack {
-            Image("scoundrel")
+            Image("Scoundrel")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

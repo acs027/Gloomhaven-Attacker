@@ -13,7 +13,7 @@ struct SawbonesPerk: View {
     
     var body: some View {
         ZStack {
-            Image("sawbones")
+            Image("Sawbones")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

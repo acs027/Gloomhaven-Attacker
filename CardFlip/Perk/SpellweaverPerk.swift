@@ -13,7 +13,7 @@ struct SpellweaverPerk: View {
     
     var body: some View {
         ZStack {
-            Image("spellweaver")
+            Image("Spellweaver")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

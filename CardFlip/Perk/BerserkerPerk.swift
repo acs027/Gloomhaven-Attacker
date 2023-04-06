@@ -13,7 +13,7 @@ struct BerserkerPerk: View {
     
     var body: some View {
         ZStack {
-            Image("berserker")
+            Image("Berserker")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

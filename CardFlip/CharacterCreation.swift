@@ -13,15 +13,19 @@ struct CharacterCreation: View {
     @State private var deck = Deck()
     @State private var characterName = ""
     @State private var characterClass = "Brute"
+    @State private var spoiler = false
     
     var body: some View {
             
             Form{
-                TextField("Character Name" ,text: $characterName)
+                
+                TextField("Character Name", text: $characterName)
                 
                 Picker("Class", selection: $characterClass) {
                     ForEach(Classes.allCases, id: \.self){ klass in
-                        Text(klass.rawValue).tag(klass.rawValue)
+                
+                        Text(spoiler ? String(describing: klass) : klass.rawValue).tag(String(describing: klass))
+
                     }
                 }.pickerStyle(.wheel)
                 
@@ -32,7 +36,11 @@ struct CharacterCreation: View {
                     .buttonStyle(.borderless)
                     .foregroundColor(.red)
 
-                    Spacer()
+                    Button {
+                        spoiler.toggle()
+                    } label: {
+                        Text("Spoiler")
+                    }
 
                     Button("Add") {
                         deck.characterCreation(characterName, characterClass)
@@ -47,31 +55,30 @@ struct CharacterCreation: View {
     }
     
     enum Classes: String, CaseIterable {
-        case Brute
-        case Spellweaver
-        case Mindthief
-        case Scoundrel
-        case Tinkerer
-        case Cragheart
-        case BeastTyrant
-        case Berserker
-        case Doomstalker
-        case Elementalist
-        case Nightshroud
-        case Plagueherald
-        case Quartermaster
-        case Sawbones
-        case Soothsinger
-        case Summoner
-        case Sunkeeper
+        case Brute = "Brute"
+        case Spellweaver = "Spellweaver"
+        case Mindthief = "Mindthief"
+        case Scoundrel = "Scoundrel"
+        case Tinkerer = "Tinkerer"
+        case Cragheart = "Cragheart"
+        case BeastTyrant = "Two Minis"
+        case Berserker = "Lightning Bolt"
+        case Doomstalker = "Angry Face"
+        case Elementalist = "Triforce"
+        case Nightshroud = "Eclipse"
+        case Plagueherald = "Cthulhu"
+        case Quartermaster = "Three Spears"
+        case Sawbones = "Saw"
+        case Soothsinger = "Music Note"
+        case Summoner = "Circles"
+        case Sunkeeper = "Sun"
         
-        case Diviner
+        case Diviner = "Diviner"
         
-        case RedGuard
-        case Hatchet
-        case Demolitionist
-        case Voidwarden
+        case RedGuard = "Red Guard"
+        case Hatchet = "Hatchet"
+        case Demolitionist = "Demolitionist"
+        case Voidwarden = "Voidwarden"
 
     }
 }
-

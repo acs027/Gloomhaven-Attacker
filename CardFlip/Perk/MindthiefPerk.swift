@@ -13,7 +13,7 @@ struct MindthiefPerk: View {
     
     var body: some View {
         ZStack {
-            Image("mindthief")
+            Image("Mindthief")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

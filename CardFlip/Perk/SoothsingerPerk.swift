@@ -13,7 +13,7 @@ struct SoothsingerPerk: View {
     
     var body: some View {
         ZStack {
-            Image("soothsinger")
+            Image("Soothsinger")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

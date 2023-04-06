@@ -13,7 +13,7 @@ struct CragheartPerk: View {
     
     var body: some View {
         ZStack {
-            Image("cragheart")
+            Image("Cragheart")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
