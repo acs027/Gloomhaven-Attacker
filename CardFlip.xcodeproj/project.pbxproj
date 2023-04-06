@@ -30,6 +30,7 @@
 		0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882E44D29A79E3100FB277E /* Assets.xcassets */; };
 		0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882E45029A79E3100FB277E /* Preview Assets.xcassets */; };
 		0882E45C29A79F5B00FB277E /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E45B29A79F5B00FB277E /* Deck.swift */; };
+		08EABB1429DEC61900F0F849 /* classTabIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */; };
 		282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B3EEF29C78DB900D3D399 /* SideMenu.swift */; };
 		282EFE2929AF65B000F706F0 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EFE2829AF65B000F706F0 /* DeckView.swift */; };
 		2878AE9E29D9021900DBE245 /* CragheartPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9D29D9021900DBE245 /* CragheartPerk.swift */; };
@@ -68,6 +69,7 @@
 		0882E44D29A79E3100FB277E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0882E45029A79E3100FB277E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0882E45B29A79F5B00FB277E /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = classTabIcons.xcassets; sourceTree = "<group>"; };
 		282B3EEF29C78DB900D3D399 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		282EFE2829AF65B000F706F0 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		2878AE9D29D9021900DBE245 /* CragheartPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CragheartPerk.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				0851AB6829DD372A00056AAA /* classPerkCards.xcassets */,
 				0880DD4429D671E200B53B51 /* perkIcons.xcassets */,
 				087AACEB29D8F0B700DA5F9B /* classIcons.xcassets */,
+				08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */,
 				0882E44F29A79E3100FB277E /* Preview Content */,
 			);
 			path = CardFlip;
@@ -227,6 +230,7 @@
 				0851AB6929DD372A00056AAA /* classPerkCards.xcassets in Resources */,
 				0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */,
 				0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */,
+				08EABB1429DEC61900F0F849 /* classTabIcons.xcassets in Resources */,
 				087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
