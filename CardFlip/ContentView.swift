@@ -17,9 +17,11 @@ struct ContentView: View {
                     ForEach(decks.decks, id: \.id) { deste in
                         DeckView(deck: deste)
                             .tabItem {
-                                Label(deste.characterClass, systemImage: "minus")
-                                    .foregroundColor(.white)
+                                Image(deste.characterClass+"TabIcon")
+                                    .renderingMode(.template)
+                                Text(deste.characterName)
                             }
+                            .toolbarBackground(Color.yellow , for: .tabBar)
                             .toolbar(decks.decks.count == 1 ? .hidden : .visible, for: .tabBar)
                             .environmentObject(decks)
                             .background(

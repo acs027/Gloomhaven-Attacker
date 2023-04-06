@@ -47,7 +47,7 @@ struct CharacterCreation: View {
                         decks.addDeck(deck: deck)
                         dismiss()
                     }
-                    .disabled(decks.decks.count > 3)
+                    .disabled(decks.decks.count > 3 || characterName == "")
                     .buttonStyle(.borderless)
 
                 }
