@@ -33,6 +33,7 @@
 		08EABB1429DEC61900F0F849 /* classTabIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */; };
 		282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B3EEF29C78DB900D3D399 /* SideMenu.swift */; };
 		282EFE2929AF65B000F706F0 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EFE2829AF65B000F706F0 /* DeckView.swift */; };
+		2865C2C329E2058E0046094B /* DivinerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865C2C229E2058E0046094B /* DivinerPerk.swift */; };
 		2878AE9E29D9021900DBE245 /* CragheartPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9D29D9021900DBE245 /* CragheartPerk.swift */; };
 		2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */; };
 		287EF15129DA51DD00D2BE76 /* SunkeeperPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */; };
@@ -72,6 +73,7 @@
 		08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = classTabIcons.xcassets; sourceTree = "<group>"; };
 		282B3EEF29C78DB900D3D399 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		282EFE2829AF65B000F706F0 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		2865C2C229E2058E0046094B /* DivinerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivinerPerk.swift; sourceTree = "<group>"; };
 		2878AE9D29D9021900DBE245 /* CragheartPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CragheartPerk.swift; sourceTree = "<group>"; };
 		2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellweaverPerk.swift; sourceTree = "<group>"; };
 		287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunkeeperPerk.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				083D5A8E29D9577500171224 /* TinkererPerk.swift */,
 				2878AE9D29D9021900DBE245 /* CragheartPerk.swift */,
 				0873D94F29DA9BFD00C26804 /* BeastTyrantPerk.swift */,
+				2865C2C229E2058E0046094B /* DivinerPerk.swift */,
 				0807294C29D7E6FF00647877 /* BerserkerPerk.swift */,
 				0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */,
 				0873D95329DA9C1000C26804 /* ElementalistPerk.swift */,
@@ -245,6 +248,7 @@
 				0873D95429DA9C1000C26804 /* ElementalistPerk.swift in Sources */,
 				0882E45C29A79F5B00FB277E /* Deck.swift in Sources */,
 				0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */,
+				2865C2C329E2058E0046094B /* DivinerPerk.swift in Sources */,
 				2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */,
 				0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */,
 				282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */,
