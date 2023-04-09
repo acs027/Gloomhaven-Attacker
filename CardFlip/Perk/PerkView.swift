@@ -143,6 +143,8 @@ struct PerkView: View {
             case "Diviner":
                 DivinerPerk(deck: deck)
                 
+            case "RedGuard":
+                RedGuardPerk(deck: deck)
             default:
                 Text("---")
             }
