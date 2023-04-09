@@ -140,6 +140,18 @@ struct PerkView: View {
             case "Sunkeeper":
                 SunkeeperPerk(deck: deck)
                 
+            case "Diviner":
+                DivinerPerk(deck: deck)
+                
+            case "RedGuard":
+                RedGuardPerk(deck: deck)
+            case "Hatchet":
+                HatchetPerk(deck: deck)
+            case "Demolitionist":
+                DemolitionistPerk(deck: deck)
+            case "Voidwarden":
+                VoidwardenPerk(deck: deck)
+                
             default:
                 Text("---")
             }
