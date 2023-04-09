@@ -44,6 +44,7 @@
 		28EBB2BD29E21F8200D418AC /* RedGuardPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */; };
 		28EBB2BF29E247E300D418AC /* HatchetPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2BE29E247E300D418AC /* HatchetPerk.swift */; };
 		28EBB2C129E2519900D418AC /* DemolitionistPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2C029E2519900D418AC /* DemolitionistPerk.swift */; };
+		28EBB2C329E25B5600D418AC /* VoidwardenPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2C229E25B5600D418AC /* VoidwardenPerk.swift */; };
 		28FD47FB29D101C300C566BD /* CharacterCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD47FA29D101C300C566BD /* CharacterCreation.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedGuardPerk.swift; sourceTree = "<group>"; };
 		28EBB2BE29E247E300D418AC /* HatchetPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchetPerk.swift; sourceTree = "<group>"; };
 		28EBB2C029E2519900D418AC /* DemolitionistPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemolitionistPerk.swift; sourceTree = "<group>"; };
+		28EBB2C229E25B5600D418AC /* VoidwardenPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidwardenPerk.swift; sourceTree = "<group>"; };
 		28FD47FA29D101C300C566BD /* CharacterCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCreation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */,
 				083D5A8A29D93A2F00171224 /* MindthiefPerk.swift */,
 				083D5A8C29D942F300171224 /* ScoundrelPerk.swift */,
+				28EBB2C229E25B5600D418AC /* VoidwardenPerk.swift */,
 				28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */,
 				083D5A8E29D9577500171224 /* TinkererPerk.swift */,
 				2878AE9D29D9021900DBE245 /* CragheartPerk.swift */,
@@ -284,6 +287,7 @@
 				28EBB2BD29E21F8200D418AC /* RedGuardPerk.swift in Sources */,
 				0873D95229DA9C0700C26804 /* DoomstalkerPerk.swift in Sources */,
 				0873D95029DA9BFD00C26804 /* BeastTyrantPerk.swift in Sources */,
+				28EBB2C329E25B5600D418AC /* VoidwardenPerk.swift in Sources */,
 				0848720329DAAB7300C0CB46 /* SawbonesPerk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
