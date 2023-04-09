@@ -42,6 +42,7 @@
 		28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7D23C29B9047300073C6D /* AppDelegate.swift */; };
 		28D1275629DA579C00282229 /* SummonerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1275529DA579C00282229 /* SummonerPerk.swift */; };
 		28EBB2BD29E21F8200D418AC /* RedGuardPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */; };
+		28EBB2BF29E247E300D418AC /* HatchetPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2BE29E247E300D418AC /* HatchetPerk.swift */; };
 		28FD47FB29D101C300C566BD /* CharacterCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FD47FA29D101C300C566BD /* CharacterCreation.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		28C7D23C29B9047300073C6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D1275529DA579C00282229 /* SummonerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerPerk.swift; sourceTree = "<group>"; };
 		28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedGuardPerk.swift; sourceTree = "<group>"; };
+		28EBB2BE29E247E300D418AC /* HatchetPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchetPerk.swift; sourceTree = "<group>"; };
 		28FD47FA29D101C300C566BD /* CharacterCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCreation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 				2878AE9D29D9021900DBE245 /* CragheartPerk.swift */,
 				0873D94F29DA9BFD00C26804 /* BeastTyrantPerk.swift */,
 				2865C2C229E2058E0046094B /* DivinerPerk.swift */,
+				28EBB2BE29E247E300D418AC /* HatchetPerk.swift */,
 				0807294C29D7E6FF00647877 /* BerserkerPerk.swift */,
 				0873D95129DA9C0700C26804 /* DoomstalkerPerk.swift */,
 				0873D95329DA9C1000C26804 /* ElementalistPerk.swift */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0873D95429DA9C1000C26804 /* ElementalistPerk.swift in Sources */,
+				28EBB2BF29E247E300D418AC /* HatchetPerk.swift in Sources */,
 				0882E45C29A79F5B00FB277E /* Deck.swift in Sources */,
 				0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */,
 				2865C2C329E2058E0046094B /* DivinerPerk.swift in Sources */,
