@@ -147,6 +147,8 @@ struct PerkView: View {
                 RedGuardPerk(deck: deck)
             case "Hatchet":
                 HatchetPerk(deck: deck)
+            case "Demolitionist":
+                DemolitionistPerk(deck: deck)
                 
             default:
                 Text("---")
