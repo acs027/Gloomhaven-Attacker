@@ -20,7 +20,6 @@ struct DeckView: View {
     
     @GestureState var gestureOffset: CGFloat = 0
     
-    
     var body: some View {
         let sideBarWidth = getRect().width - 90
         
@@ -72,6 +71,12 @@ struct DeckView: View {
                     }
                 }
             }
+            .onShake {
+                if deck.isShuffle {
+                    deck.deckShuffle()
+                    deck.isShuffle = false
+                }
+            }
             .overlay(
             Rectangle()
                 .fill(
@@ -86,31 +91,31 @@ struct DeckView: View {
                 }
             )
         }
-            .frame(width: getRect().width + sideBarWidth)
-            .offset(x: -sideBarWidth / 2)
-            .offset(x: offset > 0 ? offset : 0)
-            .gesture(
-                DragGesture()
-                    .updating($gestureOffset, body: {value, out, _ in
-                        out = value.translation.width
-                    })
-                    .onEnded(onEnd(value:))
-            )
-            .animation(.easeOut, value: offset == 0)
-            .onChange(of: showMenu){ newValue in
-                if showMenu && offset == 0 {
-                    offset = sideBarWidth
-                    lastStoredOffset = offset
-                }
-                
-                if !showMenu && offset == sideBarWidth {
-                    offset = 0
-                    lastStoredOffset = 0
-                }
+        .frame(width: getRect().width + sideBarWidth)
+        .offset(x: -sideBarWidth / 2)
+        .offset(x: offset > 0 ? offset : 0)
+        .gesture(
+            DragGesture()
+                .updating($gestureOffset, body: {value, out, _ in
+                    out = value.translation.width
+                })
+                .onEnded(onEnd(value:))
+        )
+        .animation(.easeOut, value: offset == 0)
+        .onChange(of: showMenu){ newValue in
+            if showMenu && offset == 0 {
+                offset = sideBarWidth
+                lastStoredOffset = offset
             }
-            .onChange(of: gestureOffset){ newValue in
-                onChange()
+            
+            if !showMenu && offset == sideBarWidth {
+                offset = 0
+                lastStoredOffset = 0
             }
+        }
+        .onChange(of: gestureOffset){ newValue in
+            onChange()
+        }
     }
     
     func onChange(){
