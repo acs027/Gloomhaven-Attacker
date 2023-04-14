@@ -14,7 +14,7 @@ struct DivinerPerk: View {
     
     var body: some View {
         ZStack {
-            Image("diviner")
+            Image("Diviner")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

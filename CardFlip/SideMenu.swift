@@ -16,98 +16,140 @@ struct SideMenu: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Spacer()
-                .frame(height: 30)
-                List{
-                    Button{
-                        deck.deckReset()
-                    } label: {
-                        Text("Reset Decks")
-                            .foregroundColor(.red)
-                    }
-                    Button{
-                        deck.undo()
-                    } label: {
-                        Text("Undo")
-                            .foregroundColor(.red)
-                    }
-                    Button{
-                        deck.shuffleUndrawn()
-                    } label: {
-                        Text("Shuffle Undrawn")
-                            .foregroundColor(.red)
+            
+            Image("ghlogo")
+                .resizable()
+                .scaledToFill()
+                .frame(width: getRect().width - 100)
+                .padding(.horizontal, 5)
+                
+            Group{
+                Button{
+                    deck.deckReset()
+                } label: {
+                    Text("Reset Decks")
+                        .foregroundColor(.red)
+                        .font(.system(size: (getRect().width / 20) + 2))
+                }
+                
+                Button{
+                    deck.undo()
+                } label: {
+                    Text("Undo")
+                        .foregroundColor(.red)
+                        .font(.system(size: (getRect().width / 20) + 2))
+                }
+                Button{
+                    deck.shuffleUndrawn()
+                } label: {
+                    Text("Shuffle Undrawn")
+                        .foregroundColor(.red)
+                        .font(.system(size: (getRect().width / 20) + 2))
+                }
+            }.padding(.horizontal)
+            
+            Divider()
+                .frame(height: 2)
+                .overlay(.gray)
+                .padding()
+            
+            Group{
+                Button{
+                    deck.addBless()
+                
+                } label: {
+                    HStack{
+                        Text("Add Bless")
+                            .font(.system(size: (getRect().width / 20) + 2))
+                        Image("blessP").perkIconMod()
+                        Text("(\(String(deck.blessCount)))")
+                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                 }
+                Button{
+                    deck.addCurse()
 
-                List{
-                    Button{
-                        deck.addBless()
-                    
-                    } label: {
-                        HStack{
-                            Text("Add Bless")
-                            Image(systemName: "cross")
-                            Text(String(deck.blessCount))
-                        }
-                    }
-                    Button{
-                        deck.addCurse()
-      
-                    } label: {
-                        HStack{
-                            Text("Add Curse")
-                            Image(systemName: "circle")
-                            Text(String(deck.curseCount))
-                        }
-                    }
-                    Button{
-                        deck.addMinusOne()
-                     
-                    } label: {
-                        HStack{
-                            Text("Add -1")
-                            Image(systemName: "minus")
-                            Text(String(deck.minusoneCount))
-                        }
+                } label: {
+                    HStack{
+                        Text("Add Curse")
+                            .font(.system(size: (getRect().width / 20) + 2))
+                        Image("curseP").perkIconMod()
+                        Text("(\(String(deck.curseCount)))")
+                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                 }
-                List {
-                    EditButton()
-                    ForEach(decks.decks, id: \.id) { deste in
-                        NavigationLink {
-                            PerkView(deck: deste)
-                        } label: {
-                            Text("\(deste.characterName) \(deste.characterClass)")
-                        }
-                        
-        
+                Button{
+                    deck.addMinusOne()
+                 
+                } label: {
+                    HStack{
+                        Text("Add")
+                            .font(.system(size: (getRect().width / 20) + 2))
+                        minusOne()
+                        Text("(\(String(deck.minusoneCount)))")
+                            .font(.system(size: (getRect().width / 20) + 2))
                     }
-                    .onDelete(perform: delete)
-                    
+                }
+            }.padding(.horizontal)
+            
+            Divider()
+                .frame(height: 2)
+                .overlay(.gray)
+                .padding()
+            
+            Group{
+                HStack{
                     Button{
                         showingSheet.toggle()
                     } label: {
-                        Text("Create a new character")
+                        Text("Add new character")
+                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                     .disabled(decks.decks.count > 3)
                     
+                    Spacer()
+                    
+                    EditButton()
                 }
-                List{
-                    Button{} label: {
-                        HStack{
-                            Image(systemName: "pencil")
-                            Text("Settings")
+                .padding(.bottom)
+                List {
+                    
+                    ForEach(decks.decks, id: \.id) { deste in
+                        NavigationLink (destination: PerkView(deck: deste)){
+                            HStack{
+                                Image(deste.characterClass)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: getRect().width / 20)
+                                    .padding(.trailing)
+                                Text(deste.characterName)
+                                    .font(.system(size: getRect().width / 20))
+                            }
                         }
                     }
+                    .onDelete(perform: delete)
+                    .listRowBackground(Color.clear)
+                }.listStyle(.plain)
+            }.padding(.horizontal)
+            
+            Button{ } label: {
+                HStack{
+                    Image(systemName: "gearshape")
+                    Text("Settings")
+                        .font(.system(size: (getRect().width / 20) + 2))
                 }
+            }.padding(.horizontal)
+            
+            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .frame(width: getRect().width - 90)
         .frame(height: UIScreen.screenHeight)
         .background(
-            Color.primary
-                .opacity(0.04)
-                .ignoresSafeArea(.container, edges: .vertical)
+            Image("sidemenubg")
+                .resizable()
+                .frame(width: getRect().width - 90)
+                .ignoresSafeArea()
         )
         .frame(maxWidth: .infinity, alignment: .leading)
         .sheet(isPresented: $showingSheet) {

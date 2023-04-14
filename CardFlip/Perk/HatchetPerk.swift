@@ -271,10 +271,10 @@ struct HatchetPerk: View {
                                 Text("Replace one")
                                 plusOne()
                                 Text("card with one")
-                                plusThree()
-                                Text("card")
                             }
                             HStack {
+                                plusThree()
+                                Text("card")
                             }
                         }
                         
