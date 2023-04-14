@@ -13,7 +13,7 @@ struct VoidwardenPerk: View {
     
     var body: some View {
         ZStack {
-            Image("voidwarden")
+            Image("Voidwarden")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

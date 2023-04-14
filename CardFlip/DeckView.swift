@@ -30,7 +30,7 @@ struct DeckView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        Text("Character Name")
+                        Text(deck.characterName)
                             .frame(maxWidth: .infinity ,alignment: .leading)
                             .padding()
                         Text("\(deck.cards.count - deck.discardCount)")
