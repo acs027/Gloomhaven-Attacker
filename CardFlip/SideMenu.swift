@@ -15,11 +15,11 @@ struct SideMenu: View {
     @State private var showingSheet = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 2) {
             
             Image("ghlogo")
                 .resizable()
-                .scaledToFill()
+                .scaledToFit()
                 .frame(width: getRect().width - 100)
                 .padding(.horizontal, 5)
                 
@@ -30,6 +30,7 @@ struct SideMenu: View {
                     Text("Reset Decks")
                         .foregroundColor(.red)
                         .font(.system(size: (getRect().width / 20) + 2))
+                        .shadow(color: .primary, radius: 1)
                 }
                 
                 Button{
@@ -38,6 +39,7 @@ struct SideMenu: View {
                     Text("Undo")
                         .foregroundColor(.red)
                         .font(.system(size: (getRect().width / 20) + 2))
+                        .shadow(color: .primary, radius: 1)
                 }
                 Button{
                     deck.shuffleUndrawn()
@@ -45,6 +47,7 @@ struct SideMenu: View {
                     Text("Shuffle Undrawn")
                         .foregroundColor(.red)
                         .font(.system(size: (getRect().width / 20) + 2))
+                        .shadow(color: .primary, radius: 1)
                 }
             }.padding(.horizontal)
             
@@ -113,12 +116,13 @@ struct SideMenu: View {
                 }
                 .padding(.bottom)
                 List {
-                    
                     ForEach(decks.decks, id: \.id) { deste in
                         NavigationLink (destination: PerkView(deck: deste)){
                             HStack{
                                 Image(deste.characterClass)
                                     .resizable()
+                                    .renderingMode(.template)
+                                    .foregroundColor(.primary)
                                     .scaledToFill()
                                     .frame(width: getRect().width / 20)
                                     .padding(.trailing)
@@ -129,7 +133,9 @@ struct SideMenu: View {
                     }
                     .onDelete(perform: delete)
                     .listRowBackground(Color.clear)
-                }.listStyle(.plain)
+                }
+                .listStyle(.plain)
+                .frame(height: UIScreen.screenHeight * 0.3)
             }.padding(.horizontal)
             
             Button{ } label: {

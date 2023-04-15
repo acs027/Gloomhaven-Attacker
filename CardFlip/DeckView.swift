@@ -91,6 +91,7 @@ struct DeckView: View {
                 }
             )
         }
+//        .toolbar(decks.decks.count == 1 || offset > 0 ? .hidden : .visible, for: .tabBar)
         .frame(width: getRect().width + sideBarWidth)
         .offset(x: -sideBarWidth / 2)
         .offset(x: offset > 0 ? offset : 0)

@@ -9,70 +9,66 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var decks = Decks()
+    @State var currentTab = ""
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+    }
     
     var body: some View {
         if UIDevice.isIPhone {
             NavigationView{
-                TabView {
-                    ForEach(decks.decks, id: \.id) { deste in
-                        DeckView(deck: deste)
-                            .tabItem {
-                                Image(deste.characterClass+"TabIcon")
-                                    .renderingMode(.template)
-                                Text(deste.characterName)
-                            }
-                            .toolbarBackground(Color.yellow , for: .tabBar)
-                            .toolbar(decks.decks.count == 1 ? .hidden : .visible, for: .tabBar)
-                            .environmentObject(decks)
-                            .background(
-                                Image("backgroundimage")
-                                    .resizable()
-                                    .ignoresSafeArea()
-                                    
-                            )
+                VStack {
+                    TabView(selection: $currentTab) {
+                        ForEach(decks.decks, id: \.id) { deste in
+                            DeckView(deck: deste)
+                                .tag(deste.characterClass)
+                            //                            .tabItem {
+                            //                                Image(deste.characterClass+"TabIcon")
+                            //                                    .renderingMode(.template)
+                            //                                Text(deste.characterName)
+                            //                            }
+                                .environmentObject(decks)
+                                .background(
+                                    Image("backgroundimage")
+                                        .resizable()
+                                        .ignoresSafeArea()
+                                )
+                        }
+                    }
+                    HStack(spacing: 0){
+                        ForEach(decks.decks, id: \.id) { deste in
+                            TabButton(image: deste.characterClass)
+                        }
                     }
                 }
-//                DeckView()
-//                    .environmentObject(decks)
-//                    .background(
-//                        Image("backgroundimage")
-//                            .resizable()
-//                            .ignoresSafeArea()
-//                    )
+                .frame(width: getRect().width)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: UIScreen.screenWidth)
+            
         } else {
             NavigationView{
-                VStack{
-                    Button{
-                        AppDelegate.orientationLock = UIInterfaceOrientationMask.landscapeRight
-                        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
-                        UIViewController.attemptRotationToDeviceOrientation()
-                    } label: {
-                        Text("mode")
-                    }
-//                    HStack{
-//                        Divider()
-//                        DeckView()
-//                            .frame(width: UIScreen.screenWidth / 4 * 0.96)
-//                        Divider()
-//                        DeckView()
-//                            .frame(width: UIScreen.screenWidth / 4 * 0.96)
-//                        Divider()
-//                        DeckView()
-//                            .frame(width: UIScreen.screenWidth / 4 * 0.96)
-//                        Divider()
-//                        DeckView()
-//                            .frame(width: UIScreen.screenWidth / 4 * 0.96)
-//                        Divider()
-//                    }
-                }
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
+    @ViewBuilder
+    func TabButton(image: String) -> some View {
+        Button{
+            withAnimation{currentTab = image}
+        } label: {
+            Image(image+"TabIcon")
+                .resizable()
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: getRect().width / 12)
+                .foregroundColor(currentTab == image ? .primary : .gray)
+                .frame(maxWidth: .infinity)
+        }
+    }
 }
+
 
 extension UIScreen{
     static let screenWidth = UIScreen.main.bounds.size.width
