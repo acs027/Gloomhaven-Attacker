@@ -20,7 +20,7 @@ struct minusTwo: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("-2")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -32,7 +32,7 @@ struct minusOne: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("-1")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -44,7 +44,7 @@ struct plusZero: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("+0")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -56,7 +56,7 @@ struct plusOne: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("+1")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -68,7 +68,7 @@ struct plusTwo: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("+2")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -80,7 +80,7 @@ struct plusThree: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("+3")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -92,7 +92,7 @@ struct plusFour: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.black, lineWidth: 2)
+                .stroke(Color.primary, lineWidth: 2)
                 .frame(width: 23)
             Text("+4")
                 .font(.custom("PirataOne-Regular", size: 18))
@@ -102,6 +102,9 @@ struct plusFour: View {
 
 struct PerkView: View {
     @ObservedObject var deck: Deck
+    @EnvironmentObject var decks: Decks
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationStack {
             switch deck.characterClass {
@@ -155,15 +158,35 @@ struct PerkView: View {
             default:
                 Text("---")
             }
+            
                 
         }
-        .toolbar {
-            Button {
-                
-            } label: {
-                Text("Save")
+        .navigationBarBackButtonHidden(true) // Hide the default back button
+        .navigationBarItems(
+            leading: Button(action: {
+                // Handle the back button action here
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7 * 1.75) {
+                    decks.save()
+                }
+                deck.deckShuffle()
+                self.presentationMode.wrappedValue.dismiss() // Dismiss
+            }) {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.blue)
+                Text("Back")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(.blue)
             }
-        }
+        )
+//        .toolbar {
+//            Button {
+//                decks.save()
+//                deck.deckShuffle()
+//            } label: {
+//                Text("Save")
+//            }
+//        }
     }
 }
 

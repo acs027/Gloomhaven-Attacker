@@ -14,7 +14,7 @@ struct DeckView: View {
     let cardWidth = UIDevice.isIPhone ? UIScreen.screenWidth * 0.75 : UIScreen.screenWidth / 4 * 0.75
     let cardHeight = UIDevice.isIPhone ? UIScreen.screenWidth * 0.75 * 0.65 : UIScreen.screenWidth / 4 * 0.75 * 0.65
     
-    @State var showMenu: Bool = false
+    @Binding var showMenu: Bool
     @State var offset: CGFloat = 0
     @State var lastStoredOffset: CGFloat = 0
     
@@ -27,71 +27,77 @@ struct DeckView: View {
             SideMenu(showMenu: $showMenu, deck: deck)
                 .ignoresSafeArea()
                 .environmentObject(decks)
-            ScrollView {
-                VStack {
-                    HStack {
-                        Text(deck.characterName)
-                            .frame(maxWidth: .infinity ,alignment: .leading)
+            ZStack{
+                Image(deck.characterClass)
+                    .renderingMode(.template)
+                    .foregroundColor(.primary)
+                    .opacity(0.5)
+                ScrollView {
+                    VStack {
+                        HStack {
+                            Text(deck.characterName)
+                                .frame(maxWidth: .infinity ,alignment: .leading)
+                                .padding()
+                            Text("\(deck.cards.count - deck.discardCount)")
+                                .animation(nil)
+                                .frame(maxWidth: .infinity ,alignment: .center)
+                            Button {
+                                deck.deckShuffle()
+                                deck.isShuffle = false
+                            } label: {
+                                Text("Shuffle")
+                            }
+                            .disabled(!deck.isShuffle)
+                            .frame(maxWidth: .infinity ,alignment: .trailing)
                             .padding()
-                        Text("\(deck.cards.count - deck.discardCount)")
-                            .animation(nil)
-                            .frame(maxWidth: .infinity ,alignment: .center)
-                        Button {
-                            deck.deckShuffle()
-                            deck.isShuffle = false
-                        } label: {
-                            Text("Shuffle")
                         }
-                        .disabled(!deck.isShuffle)
-                        .frame(maxWidth: .infinity ,alignment: .trailing)
-                        .padding()
-                    }
-                    ZStack {
-                        ForEach(deck.cards, id: \.cardID) { card in
-                            Image(card.cardImage)
-                                .resizable()
-                                .cornerRadius(15)
-                                .frame(width: cardWidth, height: cardHeight)
-                                .rotation3DEffect(.degrees(card.cardAngle), axis: (x: 1, y: 0, z: 0))
-                                .offset(y: CGFloat(card.cardOffset))
-                                .onTapGesture {
-                                    deck.cardAnim(card)
-                                    deck.isShuffle = deck.enableShuffle(card)
-                                    deck.blessCurseCheck(card)
-                                }
-                                .allowsHitTesting(card.cardOffset == 0)
-                                .frame(width: cardWidth * 1.33)
+                        ZStack {
+                            ForEach(deck.cards, id: \.cardID) { card in
+                                Image(card.cardImage)
+                                    .resizable()
+                                    .cornerRadius(15)
+                                    .frame(width: cardWidth, height: cardHeight)
+                                    .rotation3DEffect(.degrees(card.cardAngle), axis: (x: 1, y: 0, z: 0))
+                                    .offset(y: CGFloat(card.cardOffset))
+                                    .onTapGesture {
+                                        deck.cardAnim(card)
+                                        deck.isShuffle = deck.enableShuffle(card)
+                                        deck.blessCurseCheck(card)
+                                        AppDelegate.decks = decks
+                                    }
+                                    .allowsHitTesting(card.cardOffset == 0)
+                                    .frame(width: cardWidth * 1.33)
+                            }
+                        }
+                        Spacer()
+                        ForEach(0..<deck.discardCount, id: \.self) { _ in
+                            Rectangle()
+                                .frame(width: cardWidth, height: cardHeight + 5)
+                                .opacity(0)
                         }
                     }
-                    Spacer()
-                    ForEach(0..<deck.discardCount, id: \.self) { _ in
-                        Rectangle()
-                            .frame(width: cardWidth, height: cardHeight + 5)
-                            .opacity(0)
+                }
+                .onShake {
+                    if deck.isShuffle {
+                        deck.deckShuffle()
+                        deck.isShuffle = false
                     }
                 }
-            }
-            .onShake {
-                if deck.isShuffle {
-                    deck.deckShuffle()
-                    deck.isShuffle = false
-                }
-            }
-            .overlay(
-            Rectangle()
-                .fill(
-                    Color.primary
-                        .opacity(Double((offset / sideBarWidth) / 5))
+                .overlay(
+                    Rectangle()
+                        .fill(
+                            Color.primary
+                                .opacity(Double((offset / sideBarWidth) / 5))
+                        )
+                        .ignoresSafeArea(.container, edges: .vertical)
+                        .onTapGesture {
+                            withAnimation{
+                                showMenu.toggle()
+                            }
+                        }
                 )
-                .ignoresSafeArea(.container, edges: .vertical)
-                .onTapGesture {
-                    withAnimation{
-                        showMenu.toggle()
-                    }
-                }
-            )
+            }
         }
-//        .toolbar(decks.decks.count == 1 || offset > 0 ? .hidden : .visible, for: .tabBar)
         .frame(width: getRect().width + sideBarWidth)
         .offset(x: -sideBarWidth / 2)
         .offset(x: offset > 0 ? offset : 0)

@@ -117,7 +117,7 @@ struct SideMenu: View {
                 .padding(.bottom)
                 List {
                     ForEach(decks.decks, id: \.id) { deste in
-                        NavigationLink (destination: PerkView(deck: deste)){
+                        NavigationLink (destination: PerkView(deck: deste).environmentObject(decks)){
                             HStack{
                                 Image(deste.characterClass)
                                     .resizable()

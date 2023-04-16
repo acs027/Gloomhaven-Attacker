@@ -11,6 +11,8 @@ struct ContentView: View {
     @StateObject var decks = Decks()
     @State var currentTab = ""
     
+    @State var showMenu: Bool = false
+    
     init() {
         UITabBar.appearance().isHidden = true
     }
@@ -21,7 +23,7 @@ struct ContentView: View {
                 VStack {
                     TabView(selection: $currentTab) {
                         ForEach(decks.decks, id: \.id) { deste in
-                            DeckView(deck: deste)
+                            DeckView(deck: deste, showMenu: $showMenu)
                                 .tag(deste.characterClass)
                             //                            .tabItem {
                             //                                Image(deste.characterClass+"TabIcon")
@@ -36,9 +38,11 @@ struct ContentView: View {
                                 )
                         }
                     }
-                    HStack(spacing: 0){
-                        ForEach(decks.decks, id: \.id) { deste in
-                            TabButton(image: deste.characterClass)
+                    if showMenu == false {
+                        HStack(spacing: 0){
+                            ForEach(decks.decks, id: \.id) { deste in
+                                TabButton(image: deste.characterClass)
+                            }
                         }
                     }
                 }
