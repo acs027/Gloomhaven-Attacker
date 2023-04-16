@@ -15,6 +15,8 @@ struct CharacterCreation: View {
     @State private var characterClass = "Brute"
     @State private var spoiler = false
     
+    @State private var pickedClasses = [String]()
+    
     var body: some View {
             
             Form{
@@ -23,9 +25,9 @@ struct CharacterCreation: View {
                 
                 Picker("Class", selection: $characterClass) {
                     ForEach(Classes.allCases, id: \.self){ klass in
-                
-                        Text(spoiler ? String(describing: klass) : klass.rawValue).tag(String(describing: klass))
-
+                        if !pickedClasses.contains(String(describing: klass)){
+                            pickerObj(klass: spoiler ? String(describing: klass) : klass.rawValue, image: String(describing: klass)).tag(String(describing: klass))
+                        }
                     }
                 }.pickerStyle(.wheel)
                 
@@ -36,12 +38,6 @@ struct CharacterCreation: View {
                     .buttonStyle(.borderless)
                     .foregroundColor(.red)
 
-                    Button {
-                        spoiler.toggle()
-                    } label: {
-                        Text("Spoiler")
-                    }
-
                     Button("Add") {
                         deck.characterCreation(characterName, characterClass)
                         decks.addDeck(deck: deck)
@@ -49,9 +45,35 @@ struct CharacterCreation: View {
                     }
                     .disabled(decks.decks.count > 3 || characterName == "")
                     .buttonStyle(.borderless)
+                    
+                    Spacer()
+                    
+                    Button {
+                        spoiler.toggle()
+                    } label: {
+                        Text("Reveal Spoiler")
+                    }
 
                 }
+            }.onAppear{
+                for klass in decks.decks {
+                    pickedClasses.append(klass.characterClass)
+                }
             }
+            .onChange(of: pickedClasses){ _ in
+                deck.refresh()
+            }
+    }
+    
+    func pickerObj (klass: String, image: String) -> some View {
+        HStack{
+            Image(image)
+                .resizable()
+                .renderingMode(.template)
+                .foregroundColor(.primary)
+                .scaledToFit()
+            Text(klass)
+        }
     }
     
     enum Classes: String, CaseIterable {
