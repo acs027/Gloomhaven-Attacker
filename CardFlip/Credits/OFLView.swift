@@ -10,41 +10,25 @@ import SwiftUI
 struct OFLView: View {
     @State var fileContents = "bosh"
     
-    @State var data: String = "sd"
-    init() { self.load(file: "OFL") }
-    func load(file: String) {
-        if let filepath = Bundle.main.path(forResource: file, ofType: "txt") {
-            do {
-                let contents = try String(contentsOfFile: filepath)
-                DispatchQueue.main.async {
-                    self.data = contents
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        } else {
-            print("File not found")
-        }
+    var body: some View {
+        ScrollView{
+            Text(oflCheck())
+                .padding()
+        }.background(Color.gray)
     }
     
-    var body: some View {
-        Text(data).onAppear{
-            fileContents = printLine()
+    func oflCheck() -> String {
+        guard let oflPath = Bundle.main.path(forResource: "OFL", ofType: "txt") else {
+            print("OFL.txt not found in main bundle")
+            return "Failed to the file."
         }
-    }
-    func printLine() -> String {
-        let filename = "OFL.txt"
-        var str1: String
-        var myCounter: Int
-        do {
-            let contents = try String(contentsOfFile: filename)
-            let lines = contents.split(separator:"\n")
-            myCounter = lines.count
-            str1 = String(myCounter)
-            } catch {
-                return (error.localizedDescription)
-            }
-            return str1
+
+        guard let oflContent = try? String(contentsOfFile: oflPath, encoding: .utf8) else {
+            print("Unable to read contents of OFL.txt")
+            return "Failed to convert the file."
+        }
+        
+        return oflContent
     }
 }
 

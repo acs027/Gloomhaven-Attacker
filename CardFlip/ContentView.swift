@@ -48,6 +48,7 @@ struct ContentView: View {
                 }
                 .frame(width: getRect().width)
             }
+            .preferredColorScheme(.light)
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: UIScreen.screenWidth)
             
@@ -57,6 +58,8 @@ struct ContentView: View {
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
+    
+    
     @ViewBuilder
     func TabButton(image: String) -> some View {
         Button{

@@ -18,7 +18,6 @@ struct MindthiefPerk: View {
                 .foregroundColor(.primary)
                 .opacity(0.2)
             VStack {
-                Text(String(deck.cards.count))
                 Group {
                     HStack{
                         // MARK: Remove two -1 cards

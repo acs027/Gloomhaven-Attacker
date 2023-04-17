@@ -18,7 +18,6 @@ struct PlagueHeraldPerk: View {
                 .foregroundColor(.primary)
                 .opacity(0.2)
             VStack {
-                Text(String(deck.cards.count))
                 Group {
                     HStack{
                         // Replace one -2 card with one +0 card --1

@@ -169,6 +169,7 @@ struct PerkView: View {
                     decks.save()
                 }
                 deck.deckShuffle()
+                deck.isShuffle = false
                 self.presentationMode.wrappedValue.dismiss() // Dismiss
             }) {
                 Image(systemName: "chevron.left")
@@ -179,19 +180,5 @@ struct PerkView: View {
                     .foregroundColor(.blue)
             }
         )
-//        .toolbar {
-//            Button {
-//                decks.save()
-//                deck.deckShuffle()
-//            } label: {
-//                Text("Save")
-//            }
-//        }
     }
 }
-
-//struct PerkView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PerkView()
-//    }
-//}

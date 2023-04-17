@@ -51,7 +51,7 @@ struct CharacterCreation: View {
                     Button {
                         spoiler.toggle()
                     } label: {
-                        Text("Reveal Spoiler")
+                        Text("Reveal Spoilers")
                     }
 
                 }

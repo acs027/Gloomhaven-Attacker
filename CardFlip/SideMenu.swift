@@ -13,16 +13,17 @@ struct SideMenu: View {
     @ObservedObject var deck: Deck
     @State var Characters = [Character]()
     @State private var showingSheet = false
+    @State private var showingCredits = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            
-            Image("ghlogo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: getRect().width - 100)
-                .padding(.horizontal, 5)
-                
+            Spacer()
+                Image("applogo1")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: getRect().width - 100)
+                    .padding([.horizontal], 15)
+            Spacer()
             Group{
                 Button{
                     deck.deckReset()
@@ -138,14 +139,23 @@ struct SideMenu: View {
                 .frame(height: UIScreen.screenHeight * 0.3)
             }.padding(.horizontal)
             
-            Button{ } label: {
-                HStack{
-                    Image(systemName: "gearshape")
-                    Text("Settings")
+            HStack{
+                NavigationLink(destination: CreditsView()) {
+                    Text("Credits")
                         .font(.system(size: (getRect().width / 20) + 2))
-                }
-            }.padding(.horizontal)
-            
+                }.padding(.leading)
+                
+                Spacer()
+                
+                Button{
+                } label: {
+                    HStack{
+                        Image(systemName: "gearshape")
+                        Text("Settings")
+                            .font(.system(size: (getRect().width / 20) + 2))
+                    }
+                }.padding(.horizontal, 15)
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -19,7 +19,6 @@ struct SoothsingerPerk: View {
                 .opacity(0.2)
             ScrollView {
             VStack {
-                Text(String(deck.cards.count))
                 Group {
                     HStack{
                         //Remove two -1 cards --2
