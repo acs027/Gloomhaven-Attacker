@@ -147,14 +147,14 @@ struct SideMenu: View {
                 
                 Spacer()
                 
-                Button{
-                } label: {
-                    HStack{
-                        Image(systemName: "gearshape")
-                        Text("Settings")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                    }
-                }.padding(.horizontal, 15)
+//                Button{
+//                } label: {
+//                    HStack{
+//                        Image(systemName: "gearshape")
+//                        Text("Settings")
+//                            .font(.system(size: (getRect().width / 20) + 2))
+//                    }
+//                }.padding(.horizontal, 15)
             }
             Spacer()
         }
