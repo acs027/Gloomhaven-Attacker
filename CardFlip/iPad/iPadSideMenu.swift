@@ -1,19 +1,16 @@
 //
-//  SideMenu.swift
-//  denemetahtası
+//  iPadSideMenu.swift
+//  CardFlip
 //
-//  Created by Furkan Eken on 9.03.2023.
+//  Created by Furkan Eken on 21.04.2023.
 //
 
 import SwiftUI
 
-struct SideMenu: View {
-    @Binding var showMenu: Bool
+struct iPadSideMenu: View {
     @EnvironmentObject var decks: Decks
-    @ObservedObject var deck: Deck
     @State var Characters = [Character]()
     @State private var showingSheet = false
-    @State private var showingCredits = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
@@ -21,85 +18,9 @@ struct SideMenu: View {
                 Image("applogo1")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: getRect().width - 100)
+                    .frame(width: getRect().width / 3 - 100)
                     .padding([.horizontal], 15)
             Spacer()
-            Group{
-                Button{
-                    deck.deckReset()
-                } label: {
-                    Text("Reset Decks")
-                        .foregroundColor(.red)
-                        .font(.system(size: (getRect().width / 20) + 2))
-                        .shadow(color: .primary, radius: 1)
-                }
-                
-                Button{
-                    deck.undo()
-                } label: {
-                    Text("Undo")
-                        .foregroundColor(.red)
-                        .font(.system(size: (getRect().width / 20) + 2))
-                        .shadow(color: .primary, radius: 1)
-                }
-                Button{
-                    deck.shuffleUndrawn()
-                } label: {
-                    Text("Shuffle Undrawn")
-                        .foregroundColor(.red)
-                        .font(.system(size: (getRect().width / 20) + 2))
-                        .shadow(color: .primary, radius: 1)
-                }
-            }.padding(.leading, 20)
-            
-            Divider()
-                .frame(height: 2)
-                .overlay(.gray)
-                .padding()
-            
-            Group{
-                Button{
-                    deck.addBless()
-                
-                } label: {
-                    HStack{
-                        Text("Add Bless")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                        Image("blessP").perkIconMod()
-                        Text("(\(String(deck.blessCount)))")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                    }
-                }
-                Button{
-                    deck.addCurse()
-
-                } label: {
-                    HStack{
-                        Text("Add Curse")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                        Image("curseP").perkIconMod()
-                        Text("(\(String(deck.curseCount)))")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                    }
-                }
-                Button{
-                    deck.addMinusOne()
-                 
-                } label: {
-                    HStack{
-                        Text("Add")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                        minusOne()
-                        Text("(\(String(deck.minusoneCount)))")
-                            .font(.system(size: (getRect().width / 20) + 2))
-                    }
-                }
-            }.padding(.leading, 20)
-            
-            Divider()
-                .frame(height: 2)
-                .overlay(.gray)
-                .padding()
             
             Group{
                 HStack{
@@ -166,12 +87,10 @@ struct SideMenu: View {
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(width: getRect().width - 90)
         .frame(height: UIScreen.screenHeight)
         .background(
             Image("sidemenubg")
                 .resizable()
-                .frame(width: getRect().width - 90)
                 .ignoresSafeArea()
         )
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -187,9 +106,3 @@ struct SideMenu: View {
     }
 }
 
-
-extension View{
-    func getRect() -> CGRect{
-        return UIScreen.main.bounds
-    }
-}

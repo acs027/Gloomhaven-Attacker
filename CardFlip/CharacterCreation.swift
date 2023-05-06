@@ -29,7 +29,9 @@ struct CharacterCreation: View {
                             pickerObj(klass: spoiler ? String(describing: klass) : klass.rawValue, image: String(describing: klass)).tag(String(describing: klass))
                         }
                     }
-                }.pickerStyle(.wheel)
+                }
+                .pickerStyle(.wheel)
+                .onAppear{pickerStart()}
                 
                 HStack {
                     Button("Cancel") {
@@ -43,6 +45,7 @@ struct CharacterCreation: View {
                         decks.addDeck(deck: deck)
                         dismiss()
                     }
+                    .padding(.leading, 5)
                     .disabled(decks.decks.count > 3 || characterName == "")
                     .buttonStyle(.borderless)
                     
@@ -52,7 +55,7 @@ struct CharacterCreation: View {
                         spoiler.toggle()
                     } label: {
                         Text("Reveal Spoilers")
-                    }
+                    }.buttonStyle(.borderless)
 
                 }
             }.onAppear{
@@ -74,6 +77,18 @@ struct CharacterCreation: View {
                 .scaledToFit()
             Text(klass)
         }
+    }
+    
+    func pickerStart() -> Void {
+        if pickedClasses.contains("Brute") && characterClass == "Brute" {
+            for klass in Classes.allCases {
+                if !pickedClasses.contains(String(describing: klass)){
+                    characterClass = String(describing: klass)
+                    return
+                }
+            }
+        }
+        return
     }
     
     enum Classes: String, CaseIterable {

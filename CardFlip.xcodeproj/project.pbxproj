@@ -39,6 +39,9 @@
 		287EF15129DA51DD00D2BE76 /* SunkeeperPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */; };
 		2889105B29CA46BF000D1877 /* PerkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105929CA46BF000D1877 /* PerkView.swift */; };
 		2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105A29CA46BF000D1877 /* BrutePerk.swift */; };
+		28A1C4FC29F2761100BCB4A3 /* DeckControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */; };
+		28A1C4FF29F2878600BCB4A3 /* iPadDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */; };
+		28A1C50129F287D100BCB4A3 /* iPadSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */; };
 		28B8121629EBA687000D2203 /* OFLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8121529EBA687000D2203 /* OFLView.swift */; };
 		28B8121929EBB579000D2203 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28B8121829EBB579000D2203 /* OFL.txt */; };
 		28B8121B29EBB6D1000D2203 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8121A29EBB6D1000D2203 /* CreditsView.swift */; };
@@ -87,6 +90,9 @@
 		287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunkeeperPerk.swift; sourceTree = "<group>"; };
 		2889105929CA46BF000D1877 /* PerkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerkView.swift; sourceTree = "<group>"; };
 		2889105A29CA46BF000D1877 /* BrutePerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrutePerk.swift; sourceTree = "<group>"; };
+		28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckControl.swift; sourceTree = "<group>"; };
+		28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadDeckView.swift; sourceTree = "<group>"; };
+		28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSideMenu.swift; sourceTree = "<group>"; };
 		28B8121529EBA687000D2203 /* OFLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFLView.swift; sourceTree = "<group>"; };
 		28B8121829EBB579000D2203 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		28B8121A29EBB6D1000D2203 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
@@ -136,12 +142,13 @@
 				0882E44929A79E2F00FB277E /* CardFlipApp.swift */,
 				28C7D23C29B9047300073C6D /* AppDelegate.swift */,
 				0882E44B29A79E2F00FB277E /* ContentView.swift */,
-				282EFE2829AF65B000F706F0 /* DeckView.swift */,
 				0882E45B29A79F5B00FB277E /* Deck.swift */,
+				282EFE2829AF65B000F706F0 /* DeckView.swift */,
 				0814571229D1AA77000D5DA9 /* Decks.swift */,
 				0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */,
 				282B3EEF29C78DB900D3D399 /* SideMenu.swift */,
 				28FD47FA29D101C300C566BD /* CharacterCreation.swift */,
+				28A1C4FD29F2761900BCB4A3 /* iPad */,
 				28B8121729EBA68B000D2203 /* Credits */,
 				2889105829CA46BF000D1877 /* Perk */,
 				0882E44D29A79E3100FB277E /* Assets.xcassets */,
@@ -190,6 +197,16 @@
 				287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */,
 			);
 			path = Perk;
+			sourceTree = "<group>";
+		};
+		28A1C4FD29F2761900BCB4A3 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */,
+				28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */,
+				28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */,
+			);
+			path = iPad;
 			sourceTree = "<group>";
 		};
 		28B8121729EBA68B000D2203 /* Credits */ = {
@@ -279,11 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A1C4FC29F2761100BCB4A3 /* DeckControl.swift in Sources */,
 				0873D95429DA9C1000C26804 /* ElementalistPerk.swift in Sources */,
 				28EBB2BF29E247E300D418AC /* HatchetPerk.swift in Sources */,
 				0882E45C29A79F5B00FB277E /* Deck.swift in Sources */,
 				0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */,
 				2865C2C329E2058E0046094B /* DivinerPerk.swift in Sources */,
+				28A1C50129F287D100BCB4A3 /* iPadSideMenu.swift in Sources */,
 				2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */,
 				0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */,
 				282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */,
@@ -291,6 +310,7 @@
 				28FD47FB29D101C300C566BD /* CharacterCreation.swift in Sources */,
 				0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */,
 				084871FF29DAA25800C0CB46 /* PlagueHeraldPerk.swift in Sources */,
+				28A1C4FF29F2878600BCB4A3 /* iPadDeckView.swift in Sources */,
 				2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */,
 				28EBB2C129E2519900D418AC /* DemolitionistPerk.swift in Sources */,
 				0848720129DAA7A400C0CB46 /* QuartermasterPerk.swift in Sources */,
@@ -455,7 +475,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -470,7 +490,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -494,7 +514,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -509,7 +529,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

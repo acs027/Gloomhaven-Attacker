@@ -17,7 +17,7 @@ struct CreditsView: View {
             Text("Developed by Furkan Eken and Ali Cihan Saraç.")
             HStack{
                 Text("The code is available on")
-                Link(destination: URL(string: "https://github.com/acs027/GloomhavenMD")!) {
+                Link(destination: URL(string: "https://github.com/acs027/Gloomhaven-Attacker")!) {
                     Text("Github")
                         .foregroundColor(.blue)
                         .underline()

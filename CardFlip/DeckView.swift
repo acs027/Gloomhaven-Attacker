@@ -11,14 +11,16 @@ struct DeckView: View {
     @StateObject var deck: Deck
     @EnvironmentObject var decks: Decks
     
-    let cardWidth = UIDevice.isIPhone ? UIScreen.screenWidth * 0.75 : UIScreen.screenWidth / 4 * 0.75
-    let cardHeight = UIDevice.isIPhone ? UIScreen.screenWidth * 0.75 * 0.65 : UIScreen.screenWidth / 4 * 0.75 * 0.65
+    let cardWidth = UIScreen.screenWidth * 0.75
+    let cardHeight = UIScreen.screenWidth * 0.75 * 0.65
     
     @Binding var showMenu: Bool
     @State var offset: CGFloat = 0
     @State var lastStoredOffset: CGFloat = 0
     
     @GestureState var gestureOffset: CGFloat = 0
+    
+    @State private var showControl: Bool = false
     
     var body: some View {
         let sideBarWidth = getRect().width - 90
@@ -51,6 +53,17 @@ struct DeckView: View {
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             .padding()
                         }
+                        if showControl {
+                            DeckControl(width: UIScreen.screenWidth - 10 ,deck: deck)
+                        }
+                        Button{
+                            withAnimation{
+                                showControl.toggle()
+                            }
+                        } label : {
+                            Text("Deck Controls")
+                        }.hidden()
+                        
                         ZStack {
                             ForEach(deck.cards, id: \.cardID) { card in
                                 Image(card.cardImage)
