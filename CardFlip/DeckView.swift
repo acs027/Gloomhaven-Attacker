@@ -11,14 +11,16 @@ struct DeckView: View {
     @StateObject var deck: Deck
     @EnvironmentObject var decks: Decks
     
-    let cardWidth = UIDevice.isIPhone ? UIScreen.screenWidth * 0.75 : UIScreen.screenWidth / 4 * 0.75
-    let cardHeight = UIDevice.isIPhone ? UIScreen.screenWidth * 0.75 * 0.65 : UIScreen.screenWidth / 4 * 0.75 * 0.65
+    let cardWidth = UIScreen.screenWidth * 0.75
+    let cardHeight = UIScreen.screenWidth * 0.75 * 0.65
     
     @Binding var showMenu: Bool
     @State var offset: CGFloat = 0
     @State var lastStoredOffset: CGFloat = 0
     
     @GestureState var gestureOffset: CGFloat = 0
+    
+    @State private var showControl: Bool = false
     
     var body: some View {
         let sideBarWidth = getRect().width - 90
@@ -51,6 +53,17 @@ struct DeckView: View {
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             .padding()
                         }
+                        if showControl {
+                            DeckControl(width: UIScreen.screenWidth - 10 ,deck: deck)
+                        }
+                        Button{
+                            withAnimation{
+                                showControl.toggle()
+                            }
+                        } label : {
+                            Text("Deck Controls")
+                        }.hidden()
+                        
                         ZStack {
                             ForEach(deck.cards, id: \.cardID) { card in
                                 Image(card.cardImage)
@@ -93,8 +106,17 @@ struct DeckView: View {
                         .onTapGesture {
                             withAnimation{
                                 showMenu.toggle()
+                                
+                                if showMenu {
+                                    offset = sideBarWidth
+                                    lastStoredOffset = offset
+                                } else {
+                                    offset = 0
+                                    lastStoredOffset = 0
+                                }
                             }
                         }
+                        .disabled(!showMenu)
                 )
             }
         }
@@ -103,32 +125,22 @@ struct DeckView: View {
         .offset(x: offset > 0 ? offset : 0)
         .gesture(
             DragGesture()
-                .updating($gestureOffset, body: {value, out, _ in
-                    out = value.translation.width
+                .onChanged({ value in
+                    let sideBarWidth = getRect().width - 90
+                    let translation = value.translation.width
+                    print(translation, offset)
+                    withAnimation {
+                        if translation >= 0 && translation < sideBarWidth {
+                            offset = translation
+                        } else if translation < 0 && offset >= (sideBarWidth * 0.5) {
+                            offset = (sideBarWidth + translation)
+                        }
+                    }
                 })
                 .onEnded(onEnd(value:))
         )
+
         .animation(.easeOut, value: offset == 0)
-        .onChange(of: showMenu){ newValue in
-            if showMenu && offset == 0 {
-                offset = sideBarWidth
-                lastStoredOffset = offset
-            }
-            
-            if !showMenu && offset == sideBarWidth {
-                offset = 0
-                lastStoredOffset = 0
-            }
-        }
-        .onChange(of: gestureOffset){ newValue in
-            onChange()
-        }
-    }
-    
-    func onChange(){
-        let sideBarWidth = getRect().width - 90
-        
-        offset = (gestureOffset != 0) ? (gestureOffset < sideBarWidth ? gestureOffset : offset) : offset
     }
     
     func onEnd(value: DragGesture.Value){
@@ -136,34 +148,20 @@ struct DeckView: View {
         
         let translation = value.translation.width
         
-        withAnimation{
+        withAnimation {
             if translation > 0 {
-                if translation > (sideBarWidth / 2){
-                    offset = sideBarWidth
-                    showMenu = true
-                }
-                else {
-                    if offset == sideBarWidth {
-                        return
-                    }
-                    
-                    offset = 0
-                    showMenu = false
-                }
+                showMenu = translation > (sideBarWidth / 2)
             }
             else {
-                if -translation > (sideBarWidth / 2){
-                    offset = 0
-                    showMenu = false
-                }
-                else {
-                    
-                    if offset == 0 || !showMenu {
-                        return
-                    }
-                    offset = sideBarWidth
-                    showMenu = true
-                }
+                showMenu = !(abs(translation) > sideBarWidth / 2)
+            }
+            
+            if showMenu {
+                offset = sideBarWidth
+                lastStoredOffset = offset
+            } else {
+                offset = 0
+                lastStoredOffset = 0
             }
         }
         lastStoredOffset = offset

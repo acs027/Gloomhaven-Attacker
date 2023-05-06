@@ -74,7 +74,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[3] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
-                        .disabled(deck.buttonArray[5] || deck.buttonArray[6])
+                        .disabled(deck.buttonArray[5])
                         Button{
                             deck.buttonArray[4].toggle()
                             rowThree(condition: deck.buttonArray[4])
@@ -82,7 +82,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[4] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
-                        .disabled(deck.buttonArray[5] && deck.buttonArray[6])
+                        .disabled(deck.buttonArray[6])
                     }
                     
                     HStack {
@@ -113,7 +113,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[5] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
-                        .disabled(!deck.buttonArray[3] && !deck.buttonArray[4])
+                        .disabled(!deck.buttonArray[3])
                         Button{
                             deck.buttonArray[6].toggle()
                             rowFour(condition: deck.buttonArray[6])
@@ -121,7 +121,7 @@ struct NightshroudPerk: View {
                             let img = deck.buttonArray[6] ? "checkmark.square" : "square"
                             Image(systemName: img)
                         }
-                        .disabled(!deck.buttonArray[3] || !deck.buttonArray[4])
+                        .disabled(!deck.buttonArray[4])
                     }
                     
                     HStack {

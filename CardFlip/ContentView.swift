@@ -10,8 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var decks = Decks()
     @State var currentTab = ""
-    
     @State var showMenu: Bool = false
+    
+    @State private var offset: CGSize = CGSize(width: -UIScreen.screenWidth / 2, height: 0)
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -25,11 +26,6 @@ struct ContentView: View {
                         ForEach(decks.decks, id: \.id) { deste in
                             DeckView(deck: deste, showMenu: $showMenu)
                                 .tag(deste.characterClass)
-                            //                            .tabItem {
-                            //                                Image(deste.characterClass+"TabIcon")
-                            //                                    .renderingMode(.template)
-                            //                                Text(deste.characterName)
-                            //                            }
                                 .environmentObject(decks)
                                 .background(
                                     Image("backgroundimage")
@@ -52,13 +48,53 @@ struct ContentView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             .frame(width: UIScreen.screenWidth)
             
-        } else {
+        } else if UIDevice.isIPad {
             NavigationView{
+                ZStack{
+                    HStack{
+                        ForEach(decks.decks, id: \.id) { deste in
+                            iPadDeckView(deck: deste)
+                                .environmentObject(decks)
+                                .tag(deste.characterClass)
+                                .background(
+                                    Image("backgroundimage")
+                                        .resizable()
+                                        .ignoresSafeArea()
+                                )
+                        }
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading){
+                            Button {
+                                ipadMenu()
+                            } label : {
+                                Image(systemName: "line.3.horizontal")
+                            }
+                        }
+                    }
+                    iPadSideMenu()
+                        .offset(offset)
+                        .environmentObject(decks)
+                }
             }
+            .preferredColorScheme(.light)
             .navigationViewStyle(StackNavigationViewStyle())
+            .frame(width: UIScreen.screenWidth / 4)
         }
     }
-    
+    func ipadMenu(){
+        if showMenu == true {
+            withAnimation{
+                offset = CGSize(width: -UIScreen.screenWidth / 4, height: 0)
+            }
+            showMenu.toggle()
+        } else {
+            withAnimation{
+                offset = CGSize(width: -UIScreen.screenWidth / 2, height: 0)
+            }
+            showMenu.toggle()
+        }
+    }
     
     @ViewBuilder
     func TabButton(image: String) -> some View {
@@ -87,6 +123,9 @@ extension UIDevice {
     static let deviceDidShakeNotification = Notification.Name(rawValue: "deviceDidShakeNotification")
     static var isIPhone: Bool {
         UIDevice.current.userInterfaceIdiom == .phone
+    }
+    static var isIPad: Bool {
+        UIDevice.current.userInterfaceIdiom == .pad
     }
 }
 

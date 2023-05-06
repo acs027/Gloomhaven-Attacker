@@ -11,7 +11,7 @@ class Card: Identifiable, Codable {
     
 }
 
-@MainActor class Deck: ObservableObject, Codable {
+final class Deck: ObservableObject, Codable {
     @Published private(set) var cards: [Card]
     private let animationSpeed : Double = 0.6
     let id = UUID()

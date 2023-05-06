@@ -9,7 +9,7 @@ import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     static var decks: Decks?
-    static var orientationLock = UIInterfaceOrientationMask.portrait
+    static var orientationLock = UIDevice.isIPhone ? UIInterfaceOrientationMask.portrait : UIInterfaceOrientationMask.landscape
 
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
         return AppDelegate.orientationLock

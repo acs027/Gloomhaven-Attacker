@@ -26,23 +26,28 @@
 		0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0880DD4429D671E200B53B51 /* perkIcons.xcassets */; };
 		0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E44929A79E2F00FB277E /* CardFlipApp.swift */; };
 		0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E44B29A79E2F00FB277E /* ContentView.swift */; };
-		0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882E44D29A79E3100FB277E /* Assets.xcassets */; };
 		0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882E45029A79E3100FB277E /* Preview Assets.xcassets */; };
 		0882E45C29A79F5B00FB277E /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882E45B29A79F5B00FB277E /* Deck.swift */; };
 		08EABB1429DEC61900F0F849 /* classTabIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */; };
 		282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282B3EEF29C78DB900D3D399 /* SideMenu.swift */; };
 		282EFE2929AF65B000F706F0 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EFE2829AF65B000F706F0 /* DeckView.swift */; };
+		28559E8329EDBF6500425EB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0882E44D29A79E3100FB277E /* Assets.xcassets */; };
+		28559E8529EDBFDC00425EB4 /* PirataOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 28559E8429EDBFDC00425EB4 /* PirataOne-Regular.ttf */; };
 		2865C2C329E2058E0046094B /* DivinerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865C2C229E2058E0046094B /* DivinerPerk.swift */; };
 		2878AE9E29D9021900DBE245 /* CragheartPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9D29D9021900DBE245 /* CragheartPerk.swift */; };
 		2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */; };
 		287EF15129DA51DD00D2BE76 /* SunkeeperPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */; };
 		2889105B29CA46BF000D1877 /* PerkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105929CA46BF000D1877 /* PerkView.swift */; };
 		2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105A29CA46BF000D1877 /* BrutePerk.swift */; };
+		28A1C4FC29F2761100BCB4A3 /* DeckControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */; };
+		28A1C4FF29F2878600BCB4A3 /* iPadDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */; };
+		28A1C50129F287D100BCB4A3 /* iPadSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */; };
 		28B8121629EBA687000D2203 /* OFLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8121529EBA687000D2203 /* OFLView.swift */; };
 		28B8121929EBB579000D2203 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28B8121829EBB579000D2203 /* OFL.txt */; };
 		28B8121B29EBB6D1000D2203 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8121A29EBB6D1000D2203 /* CreditsView.swift */; };
 		28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C7D23C29B9047300073C6D /* AppDelegate.swift */; };
 		28D1275629DA579C00282229 /* SummonerPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D1275529DA579C00282229 /* SummonerPerk.swift */; };
+		28D58F8F29ED94ED00C541CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D58F8E29ED94ED00C541CB /* LaunchScreen.storyboard */; };
 		28EBB2BD29E21F8200D418AC /* RedGuardPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */; };
 		28EBB2BF29E247E300D418AC /* HatchetPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2BE29E247E300D418AC /* HatchetPerk.swift */; };
 		28EBB2C129E2519900D418AC /* DemolitionistPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EBB2C029E2519900D418AC /* DemolitionistPerk.swift */; };
@@ -78,17 +83,22 @@
 		08EABB1329DEC61900F0F849 /* classTabIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = classTabIcons.xcassets; sourceTree = "<group>"; };
 		282B3EEF29C78DB900D3D399 /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		282EFE2829AF65B000F706F0 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		28559E8429EDBFDC00425EB4 /* PirataOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PirataOne-Regular.ttf"; sourceTree = "<group>"; };
 		2865C2C229E2058E0046094B /* DivinerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivinerPerk.swift; sourceTree = "<group>"; };
 		2878AE9D29D9021900DBE245 /* CragheartPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CragheartPerk.swift; sourceTree = "<group>"; };
 		2878AE9F29D9087D00DBE245 /* SpellweaverPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellweaverPerk.swift; sourceTree = "<group>"; };
 		287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunkeeperPerk.swift; sourceTree = "<group>"; };
 		2889105929CA46BF000D1877 /* PerkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerkView.swift; sourceTree = "<group>"; };
 		2889105A29CA46BF000D1877 /* BrutePerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrutePerk.swift; sourceTree = "<group>"; };
+		28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckControl.swift; sourceTree = "<group>"; };
+		28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadDeckView.swift; sourceTree = "<group>"; };
+		28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSideMenu.swift; sourceTree = "<group>"; };
 		28B8121529EBA687000D2203 /* OFLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OFLView.swift; sourceTree = "<group>"; };
 		28B8121829EBB579000D2203 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		28B8121A29EBB6D1000D2203 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		28C7D23C29B9047300073C6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28D1275529DA579C00282229 /* SummonerPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerPerk.swift; sourceTree = "<group>"; };
+		28D58F8E29ED94ED00C541CB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28EBB2BC29E21F8200D418AC /* RedGuardPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedGuardPerk.swift; sourceTree = "<group>"; };
 		28EBB2BE29E247E300D418AC /* HatchetPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatchetPerk.swift; sourceTree = "<group>"; };
 		28EBB2C029E2519900D418AC /* DemolitionistPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemolitionistPerk.swift; sourceTree = "<group>"; };
@@ -127,15 +137,18 @@
 			isa = PBXGroup;
 			children = (
 				0880DD4929D6780B00B53B51 /* Info.plist */,
+				28559E8429EDBFDC00425EB4 /* PirataOne-Regular.ttf */,
+				28D58F8E29ED94ED00C541CB /* LaunchScreen.storyboard */,
 				0882E44929A79E2F00FB277E /* CardFlipApp.swift */,
 				28C7D23C29B9047300073C6D /* AppDelegate.swift */,
 				0882E44B29A79E2F00FB277E /* ContentView.swift */,
-				282EFE2829AF65B000F706F0 /* DeckView.swift */,
 				0882E45B29A79F5B00FB277E /* Deck.swift */,
+				282EFE2829AF65B000F706F0 /* DeckView.swift */,
 				0814571229D1AA77000D5DA9 /* Decks.swift */,
 				0814571429D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift */,
 				282B3EEF29C78DB900D3D399 /* SideMenu.swift */,
 				28FD47FA29D101C300C566BD /* CharacterCreation.swift */,
+				28A1C4FD29F2761900BCB4A3 /* iPad */,
 				28B8121729EBA68B000D2203 /* Credits */,
 				2889105829CA46BF000D1877 /* Perk */,
 				0882E44D29A79E3100FB277E /* Assets.xcassets */,
@@ -184,6 +197,16 @@
 				287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */,
 			);
 			path = Perk;
+			sourceTree = "<group>";
+		};
+		28A1C4FD29F2761900BCB4A3 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */,
+				28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */,
+				28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */,
+			);
+			path = iPad;
 			sourceTree = "<group>";
 		};
 		28B8121729EBA68B000D2203 /* Credits */ = {
@@ -254,12 +277,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28559E8529EDBFDC00425EB4 /* PirataOne-Regular.ttf in Resources */,
 				0882E45129A79E3100FB277E /* Preview Assets.xcassets in Resources */,
 				0851AB6929DD372A00056AAA /* classPerkCards.xcassets in Resources */,
+				28D58F8F29ED94ED00C541CB /* LaunchScreen.storyboard in Resources */,
 				0880DD4529D671E200B53B51 /* perkIcons.xcassets in Resources */,
-				0882E44E29A79E3100FB277E /* Assets.xcassets in Resources */,
 				08EABB1429DEC61900F0F849 /* classTabIcons.xcassets in Resources */,
 				28B8121929EBB579000D2203 /* OFL.txt in Resources */,
+				28559E8329EDBF6500425EB4 /* Assets.xcassets in Resources */,
 				087AACEC29D8F0B700DA5F9B /* classIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,11 +296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A1C4FC29F2761100BCB4A3 /* DeckControl.swift in Sources */,
 				0873D95429DA9C1000C26804 /* ElementalistPerk.swift in Sources */,
 				28EBB2BF29E247E300D418AC /* HatchetPerk.swift in Sources */,
 				0882E45C29A79F5B00FB277E /* Deck.swift in Sources */,
 				0882E44C29A79E2F00FB277E /* ContentView.swift in Sources */,
 				2865C2C329E2058E0046094B /* DivinerPerk.swift in Sources */,
+				28A1C50129F287D100BCB4A3 /* iPadSideMenu.swift in Sources */,
 				2878AEA029D9087D00DBE245 /* SpellweaverPerk.swift in Sources */,
 				0882E44A29A79E2F00FB277E /* CardFlipApp.swift in Sources */,
 				282B3EF029C78DB900D3D399 /* SideMenu.swift in Sources */,
@@ -283,6 +310,7 @@
 				28FD47FB29D101C300C566BD /* CharacterCreation.swift in Sources */,
 				0814571529D23DDB000D5DA9 /* FileManager-DocumentDirectory.swift in Sources */,
 				084871FF29DAA25800C0CB46 /* PlagueHeraldPerk.swift in Sources */,
+				28A1C4FF29F2878600BCB4A3 /* iPadDeckView.swift in Sources */,
 				2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */,
 				28EBB2C129E2519900D418AC /* DemolitionistPerk.swift in Sources */,
 				0848720129DAA7A400C0CB46 /* QuartermasterPerk.swift in Sources */,
@@ -445,9 +473,9 @@
 				INFOPLIST_KEY_NSMotionUsageDescription = "ModifierDeck needs access to your device's motion sensors to shuffle the deck when you shake your phone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,7 +490,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -484,9 +512,9 @@
 				INFOPLIST_KEY_NSMotionUsageDescription = "ModifierDeck needs access to your device's motion sensors to shuffle the deck when you shake your phone";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -501,7 +529,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
