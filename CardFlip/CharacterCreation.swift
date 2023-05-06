@@ -70,7 +70,7 @@ struct CharacterCreation: View {
     
     func pickerObj (klass: String, image: String) -> some View {
         HStack{
-            Image(image)
+            Image(image.lowercased())
                 .resizable()
                 .renderingMode(.template)
                 .foregroundColor(.primary)

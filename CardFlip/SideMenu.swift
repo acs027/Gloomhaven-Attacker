@@ -122,7 +122,7 @@ struct SideMenu: View {
                         ForEach(decks.decks, id: \.id) { deste in
                             NavigationLink (destination: PerkView(deck: deste).environmentObject(decks)){
                                 HStack{
-                                    Image(deste.characterClass)
+                                    Image(deste.characterClass.lowercased())
                                         .resizable()
                                         .renderingMode(.template)
                                         .foregroundColor(.primary)
