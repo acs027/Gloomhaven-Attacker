@@ -13,7 +13,7 @@ struct SunkeeperPerk: View {
     
     var body: some View {
         ZStack {
-            Image("Sunkeeper")
+            Image("sunkeeper")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

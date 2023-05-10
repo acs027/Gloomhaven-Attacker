@@ -28,7 +28,6 @@ struct iPadSideMenu: View {
                         showingSheet.toggle()
                     } label: {
                         Text("Add new character")
-                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                     .disabled(decks.decks.count > 3)
                     
@@ -36,6 +35,8 @@ struct iPadSideMenu: View {
                     
                     EditButton()
                 }
+                .foregroundColor(.black)
+                .font(.title3)
                 .padding(.bottom)
                 
                 if !decks.decks.isEmpty{
@@ -43,15 +44,15 @@ struct iPadSideMenu: View {
                         ForEach(decks.decks, id: \.id) { deste in
                             NavigationLink (destination: PerkView(deck: deste).environmentObject(decks)){
                                 HStack{
-                                    Image(deste.characterClass)
+                                    Image(deste.characterClass.lowercased())
                                         .resizable()
                                         .renderingMode(.template)
                                         .foregroundColor(.primary)
                                         .scaledToFill()
-                                        .frame(width: getRect().width / 20)
+                                        .frame(width: getRect().width / 40)
                                         .padding(.trailing)
                                     Text(deste.characterName)
-                                        .font(.system(size: getRect().width / 20))
+                                        .font(.title2)
                                 }
                             }
                         }
@@ -67,10 +68,13 @@ struct iPadSideMenu: View {
                 }
             }.padding(.horizontal, 20)
             
+            Spacer()
+            
             HStack{
                 NavigationLink(destination: CreditsView()) {
                     Text("Credits")
-                        .font(.system(size: (getRect().width / 20) + 2))
+                        .font(.title2)
+                        .foregroundColor(.black)
                 }.padding(.leading, 20)
                 
                 Spacer()
@@ -83,8 +87,7 @@ struct iPadSideMenu: View {
 //                            .font(.system(size: (getRect().width / 20) + 2))
 //                    }
 //                }.padding(.horizontal, 15)
-            }
-            Spacer()
+            }.padding(.bottom, 20)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .frame(height: UIScreen.screenHeight)

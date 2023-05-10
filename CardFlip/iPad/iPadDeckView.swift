@@ -18,39 +18,58 @@ struct iPadDeckView: View {
     
     var body: some View {
             ZStack{
-                Image(deck.characterClass)
+                Image(deck.characterClass.lowercased())
                     .renderingMode(.template)
                     .foregroundColor(.primary)
                     .opacity(0.5)
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack {
                         HStack {
                             Text(deck.characterName)
                                 .frame(maxWidth: .infinity ,alignment: .leading)
                                 .padding()
+                                .foregroundColor(Color(red: 246 / 255, green: 223 / 255, blue: 201 / 255))
+                                .lineLimit(1)
                             Text("\(deck.cards.count - deck.discardCount)")
                                 .animation(nil)
+                                .foregroundColor(Color(red: 246 / 255, green: 223 / 255, blue: 201 / 255))
                                 .frame(maxWidth: .infinity ,alignment: .center)
                             Button {
                                 deck.deckShuffle()
                                 deck.isShuffle = false
                             } label: {
-                                Text("Shuffle")
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .foregroundColor(Color(red: 246 / 255, green: 223 / 255, blue: 201 / 255))
+                                        .opacity(deck.isShuffle ? 1 : 0)
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.black)
+                                        .opacity(deck.isShuffle ? 1 : 0)
+                                    Text("Shuffle")
+                                }.padding(.vertical)
                             }
                             .disabled(!deck.isShuffle)
                             .frame(maxWidth: .infinity ,alignment: .trailing)
-                            .padding()
                         }
+                        .padding()
+                        
                         if showControl {
-                            DeckControl(width: UIScreen.screenWidth / 4 ,deck: deck)
-                                .frame(width: UIScreen.screenWidth / 4)
+                            DeckControl(width: UIScreen.screenWidth / 4 - 20 ,deck: deck)
+                                .frame(width: UIScreen.screenWidth / 4 - 20)
                         }
                         Button{
                             withAnimation{
                                 showControl.toggle()
                             }
                         } label : {
-                            Text("Deck Controls")
+                            ZStack{
+                                RoundedRectangle(cornerRadius: 5)
+                                    .foregroundColor(Color(red: 246 / 255, green: 223 / 255, blue: 201 / 255))
+                                RoundedRectangle(cornerRadius: 5)
+                                    .stroke(Color.black)
+                                Text("Deck Controls")
+                            }
+                            .frame(width: cardWidth * 0.6)
                         }
                         
                         ZStack {
@@ -63,7 +82,7 @@ struct iPadDeckView: View {
                                     .offset(y: CGFloat(card.cardOffset))
                                     .onTapGesture {
                                         deck.cardAnim(card)
-                                        deck.isShuffle = deck.enableShuffle(card)
+                                        deck.isShuffle = deck.isShuffle ? true : deck.enableShuffle(card)
                                         deck.blessCurseCheck(card)
                                         AppDelegate.decks = decks
                                     }

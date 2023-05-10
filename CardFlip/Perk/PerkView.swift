@@ -107,57 +107,70 @@ struct PerkView: View {
     
     var body: some View {
         NavigationStack {
-            switch deck.characterClass {
-            case "Brute":
-                BrutePerk(deck: deck)
-            case "Spellweaver":
-                SpellweaverPerk(deck: deck)
-            case "Mindthief":
-                MindthiefPerk(deck: deck)
-            case "Scoundrel":
-                ScoundrelPerk(deck: deck)
-            case "Tinkerer":
-                TinkererPerk(deck: deck)
-            case "Cragheart":
-                CragheartPerk(deck: deck)
-            case "Berserker":
-                BerserkerPerk(deck: deck)
-            case "BeastTyrant":
-                BeastTyrantPerk(deck: deck)
-            case "Doomstalker":
-                DoomstalkerPerk(deck: deck)
-            case "Elementalist":
-                ElementalistPerk(deck: deck)
-            case "Nightshroud":
-                NightshroudPerk(deck: deck)
-            case "Plagueherald":
-                PlagueHeraldPerk(deck: deck)
-            case "Quartermaster":
-                QuartermasterPerk(deck: deck)
-            case "Sawbones":
-                SawbonesPerk(deck: deck)
-            case "Soothsinger":
-                SoothsingerPerk(deck: deck)
-            case "Summoner":
-                SummonerPerk(deck: deck)
-            case "Sunkeeper":
-                SunkeeperPerk(deck: deck)
+            HStack{
+                if UIDevice.isIPad {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                }
                 
-            case "Diviner":
-                DivinerPerk(deck: deck)
+                switch deck.characterClass {
+                case "Brute":
+                    BrutePerk(deck: deck)
+                case "Spellweaver":
+                    SpellweaverPerk(deck: deck)
+                case "Mindthief":
+                    MindthiefPerk(deck: deck)
+                case "Scoundrel":
+                    ScoundrelPerk(deck: deck)
+                case "Tinkerer":
+                    TinkererPerk(deck: deck)
+                case "Cragheart":
+                    CragheartPerk(deck: deck)
+                case "Berserker":
+                    BerserkerPerk(deck: deck)
+                case "BeastTyrant":
+                    BeastTyrantPerk(deck: deck)
+                case "Doomstalker":
+                    DoomstalkerPerk(deck: deck)
+                case "Elementalist":
+                    ElementalistPerk(deck: deck)
+                case "Nightshroud":
+                    NightshroudPerk(deck: deck)
+                case "Plagueherald":
+                    PlagueHeraldPerk(deck: deck)
+                case "Quartermaster":
+                    QuartermasterPerk(deck: deck)
+                case "Sawbones":
+                    SawbonesPerk(deck: deck)
+                case "Soothsinger":
+                    SoothsingerPerk(deck: deck)
+                case "Summoner":
+                    SummonerPerk(deck: deck)
+                case "Sunkeeper":
+                    SunkeeperPerk(deck: deck)
+                    
+                case "Diviner":
+                    DivinerPerk(deck: deck)
+                    
+                case "RedGuard":
+                    RedGuardPerk(deck: deck)
+                case "Hatchet":
+                    HatchetPerk(deck: deck)
+                case "Demolitionist":
+                    DemolitionistPerk(deck: deck)
+                case "Voidwarden":
+                    VoidwardenPerk(deck: deck)
+                    
+                default:
+                    Text("---")
+                }
                 
-            case "RedGuard":
-                RedGuardPerk(deck: deck)
-            case "Hatchet":
-                HatchetPerk(deck: deck)
-            case "Demolitionist":
-                DemolitionistPerk(deck: deck)
-            case "Voidwarden":
-                VoidwardenPerk(deck: deck)
-                
-            default:
-                Text("---")
+                if UIDevice.isIPad {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                }
             }
+            
             
                 
         }

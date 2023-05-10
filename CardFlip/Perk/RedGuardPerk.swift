@@ -13,7 +13,7 @@ struct RedGuardPerk: View {
     
     var body: some View {
         ZStack {
-            Image("RedGuard")
+            Image("redguard")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
