@@ -13,7 +13,7 @@ struct DoomstalkerPerk: View {
     
     var body: some View {
         ZStack {
-            Image("Doomstalker")
+            Image("doomstalker")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

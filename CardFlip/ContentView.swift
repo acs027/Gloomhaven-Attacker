@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var currentTab = ""
     @State var showMenu: Bool = false
     
-    @State private var offset: CGSize = CGSize(width: -UIScreen.screenWidth / 2, height: 0)
+    @State private var offset: CGSize = CGSize(width: -UIScreen.screenWidth / 1.5, height: 0)
     
     init() {
         UITabBar.appearance().isHidden = true
@@ -34,7 +34,7 @@ struct ContentView: View {
                                 )
                         }
                     }
-                    if showMenu == false {
+                    if showMenu == false && tabCheck() {
                         HStack(spacing: 0){
                             ForEach(decks.decks, id: \.id) { deste in
                                 TabButton(image: deste.characterClass)
@@ -51,48 +51,87 @@ struct ContentView: View {
         } else if UIDevice.isIPad {
             NavigationView{
                 ZStack{
+                    Rectangle()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .foregroundColor(.gray)
+                        .opacity(0.001)
+                        .onTapGesture {
+                            if showMenu {
+                                ipadMenu()
+                            }
+                        }
                     HStack{
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 40)
                         ForEach(decks.decks, id: \.id) { deste in
                             iPadDeckView(deck: deste)
                                 .environmentObject(decks)
                                 .tag(deste.characterClass)
-                                .background(
-                                    Image("backgroundimage")
-                                        .resizable()
-                                        .ignoresSafeArea()
-                                )
+                                .frame(width: UIScreen.screenWidth / 4 - 20)
                         }
                     }
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarLeading){
-                            Button {
-                                ipadMenu()
-                            } label : {
+                    .onTapGesture {
+                        if showMenu {
+                            ipadMenu()
+                        }
+                    }
+                    VStack(alignment: .leading){
+                        Button{
+                            ipadMenu()
+                        } label: {
+                            ZStack(alignment: .topLeading){
+                                Rectangle()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(.clear)
                                 Image(systemName: "line.3.horizontal")
+                                    .resizable()
+                                    .frame(width: 20, height: 15)
                             }
+                            
                         }
+                        .padding(.top, 20)
+                        .padding(.leading, 5)
+                        Spacer()
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: Alignment.topLeading)
+                    .padding(.horizontal, 20)
+                    
                     iPadSideMenu()
-                        .offset(offset)
                         .environmentObject(decks)
+                        .frame(width: UIScreen.screenWidth / 4)
+                        .offset(offset)
                 }
+                .statusBarHidden(true)
+                .background(
+                    Image("backgroundimage")
+                        .resizable()
+                        .ignoresSafeArea()
+                        .frame(width: UIScreen.screenWidth, height: UIScreen.screenHeight)
+                    )
             }
             .preferredColorScheme(.light)
             .navigationViewStyle(StackNavigationViewStyle())
-            .frame(width: UIScreen.screenWidth / 4)
         }
     }
     func ipadMenu(){
         if showMenu == true {
             withAnimation{
-                offset = CGSize(width: -UIScreen.screenWidth / 4, height: 0)
+                offset = CGSize(width: -UIScreen.screenWidth / 1.5, height: 0)
             }
-            showMenu.toggle()
         } else {
             withAnimation{
-                offset = CGSize(width: -UIScreen.screenWidth / 2, height: 0)
+                offset = CGSize(width: -UIScreen.screenWidth / 2.7, height: 0)
             }
-            showMenu.toggle()
+        }
+        showMenu.toggle()
+    }
+    
+    func tabCheck() -> Bool {
+        if decks.decks.count > 1 {
+            return true
+        } else {
+            return false
         }
     }
     

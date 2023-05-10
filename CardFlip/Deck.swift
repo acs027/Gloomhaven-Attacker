@@ -179,13 +179,13 @@ final class Deck: ObservableObject, Codable {
         if kart.cardName == "miss" || kart.cardName == "crit" {
             return true
         }
-        return isShuffle
+        return false
     }
     
     func undo(){
         for kart in cards where kart.cardOffset != 0 {
             if kart.cardOffset == (60 + Int(cardHeight * 1.03)) {
-                isShuffle = !enableShuffle(kart)
+//                isShuffle = !enableShuffle(kart)
                 withAnimation(.linear(duration: animationSpeed)) {
                     objectWillChange.send()
                             kart.cardAngle = 0
@@ -205,6 +205,14 @@ final class Deck: ObservableObject, Codable {
                 }
             }
         }
+        var dummy = false
+        for kart in cards where kart.cardAngle != 0 {
+            if enableShuffle(kart) {
+                dummy = true
+                continue
+            }
+        }
+        isShuffle = dummy ? true : false
         if discardCount > 0 {
             discardCount -= 1
         }

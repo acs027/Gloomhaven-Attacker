@@ -13,7 +13,7 @@ struct PlagueHeraldPerk: View {
     
     var body: some View {
         ZStack {
-            Image("Plagueherald")
+            Image("plagueherald")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

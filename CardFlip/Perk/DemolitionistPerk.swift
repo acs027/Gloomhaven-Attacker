@@ -13,7 +13,7 @@ struct DemolitionistPerk: View {
     
     var body: some View {
         ZStack {
-            Image("Demolitionist")
+            Image("demolitionist")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)

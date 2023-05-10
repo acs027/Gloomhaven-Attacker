@@ -30,16 +30,17 @@ struct DeckView: View {
                 .ignoresSafeArea()
                 .environmentObject(decks)
             ZStack{
-                Image(deck.characterClass)
+                Image(deck.characterClass.lowercased())
                     .renderingMode(.template)
                     .foregroundColor(.primary)
                     .opacity(0.5)
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     VStack {
                         HStack {
                             Text(deck.characterName)
                                 .frame(maxWidth: .infinity ,alignment: .leading)
                                 .padding()
+                                .lineLimit(2)
                             Text("\(deck.cards.count - deck.discardCount)")
                                 .animation(nil)
                                 .frame(maxWidth: .infinity ,alignment: .center)
@@ -47,22 +48,20 @@ struct DeckView: View {
                                 deck.deckShuffle()
                                 deck.isShuffle = false
                             } label: {
-                                Text("Shuffle")
+                                ZStack{
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .foregroundColor(Color(red: 246 / 255, green: 223 / 255, blue: 201 / 255))
+                                        .opacity(deck.isShuffle ? 0.7 : 0)
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.black)
+                                        .opacity(deck.isShuffle ? 1 : 0)
+                                    Text("Shuffle")
+                                }.padding(.vertical)
                             }
                             .disabled(!deck.isShuffle)
                             .frame(maxWidth: .infinity ,alignment: .trailing)
                             .padding()
                         }
-                        if showControl {
-                            DeckControl(width: UIScreen.screenWidth - 10 ,deck: deck)
-                        }
-                        Button{
-                            withAnimation{
-                                showControl.toggle()
-                            }
-                        } label : {
-                            Text("Deck Controls")
-                        }.hidden()
                         
                         ZStack {
                             ForEach(deck.cards, id: \.cardID) { card in
@@ -74,7 +73,7 @@ struct DeckView: View {
                                     .offset(y: CGFloat(card.cardOffset))
                                     .onTapGesture {
                                         deck.cardAnim(card)
-                                        deck.isShuffle = deck.enableShuffle(card)
+                                        deck.isShuffle = deck.isShuffle ? true : deck.enableShuffle(card)
                                         deck.blessCurseCheck(card)
                                         AppDelegate.decks = decks
                                     }
@@ -128,7 +127,6 @@ struct DeckView: View {
                 .onChanged({ value in
                     let sideBarWidth = getRect().width - 90
                     let translation = value.translation.width
-                    print(translation, offset)
                     withAnimation {
                         if translation >= 0 && translation < sideBarWidth {
                             offset = translation

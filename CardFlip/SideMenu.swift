@@ -29,28 +29,24 @@ struct SideMenu: View {
                     deck.deckReset()
                 } label: {
                     Text("Reset Decks")
-                        .foregroundColor(.red)
-                        .font(.system(size: (getRect().width / 20) + 2))
-                        .shadow(color: .primary, radius: 1)
                 }
                 
                 Button{
                     deck.undo()
                 } label: {
                     Text("Undo")
-                        .foregroundColor(.red)
-                        .font(.system(size: (getRect().width / 20) + 2))
-                        .shadow(color: .primary, radius: 1)
                 }
                 Button{
                     deck.shuffleUndrawn()
                 } label: {
                     Text("Shuffle Undrawn")
-                        .foregroundColor(.red)
-                        .font(.system(size: (getRect().width / 20) + 2))
-                        .shadow(color: .primary, radius: 1)
                 }
-            }.padding(.leading, 20)
+            }
+            .foregroundColor(Color(red: 75 / 255, green: 6 / 255, blue: 14 / 255))
+            .font(.title2)
+            .bold()
+            .padding(.leading, 20)
+            .padding(.vertical, 5)
             
             Divider()
                 .frame(height: 2)
@@ -60,41 +56,37 @@ struct SideMenu: View {
             Group{
                 Button{
                     deck.addBless()
-                
                 } label: {
                     HStack{
                         Text("Add Bless")
-                            .font(.system(size: (getRect().width / 20) + 2))
                         Image("blessP").perkIconMod()
                         Text("(\(String(deck.blessCount)))")
-                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                 }
                 Button{
                     deck.addCurse()
-
                 } label: {
                     HStack{
                         Text("Add Curse")
-                            .font(.system(size: (getRect().width / 20) + 2))
                         Image("curseP").perkIconMod()
                         Text("(\(String(deck.curseCount)))")
-                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                 }
                 Button{
                     deck.addMinusOne()
-                 
                 } label: {
                     HStack{
                         Text("Add")
-                            .font(.system(size: (getRect().width / 20) + 2))
                         minusOne()
                         Text("(\(String(deck.minusoneCount)))")
-                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                 }
-            }.padding(.leading, 20)
+            }
+            .foregroundColor(Color(red: 24 / 255, green: 45 / 255, blue: 78 / 255))
+            .font(.title2)
+            .bold()
+            .padding(.leading, 20)
+            .padding(.vertical, 5)
             
             Divider()
                 .frame(height: 2)
@@ -107,7 +99,6 @@ struct SideMenu: View {
                         showingSheet.toggle()
                     } label: {
                         Text("Add new character")
-                            .font(.system(size: (getRect().width / 20) + 2))
                     }
                     .disabled(decks.decks.count > 3)
                     
@@ -115,6 +106,8 @@ struct SideMenu: View {
                     
                     EditButton()
                 }
+                .foregroundColor(.black)
+                .font(.title2)
                 .padding(.bottom)
                 
                 if !decks.decks.isEmpty{
@@ -130,7 +123,7 @@ struct SideMenu: View {
                                         .frame(width: getRect().width / 20)
                                         .padding(.trailing)
                                     Text(deste.characterName)
-                                        .font(.system(size: getRect().width / 20))
+                                        .font(.title3)
                                 }
                             }
                         }
@@ -149,32 +142,20 @@ struct SideMenu: View {
             HStack{
                 NavigationLink(destination: CreditsView()) {
                     Text("Credits")
-                        .font(.system(size: (getRect().width / 20) + 2))
+                        .font(.title3)
+                        .foregroundColor(.black)
                 }.padding(.leading, 20)
-                
-                Spacer()
-                
-//                Button{
-//                } label: {
-//                    HStack{
-//                        Image(systemName: "gearshape")
-//                        Text("Settings")
-//                            .font(.system(size: (getRect().width / 20) + 2))
-//                    }
-//                }.padding(.horizontal, 15)
             }
             Spacer()
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(width: getRect().width - 90)
-        .frame(height: UIScreen.screenHeight)
         .background(
             Image("sidemenubg")
                 .resizable()
-                .frame(width: getRect().width - 90)
                 .ignoresSafeArea()
         )
         .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(width: getRect().width - 90)
+        .frame(height: UIScreen.screenHeight)
         .sheet(isPresented: $showingSheet) {
             CharacterCreation()
                 .environmentObject(decks)

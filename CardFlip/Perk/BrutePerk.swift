@@ -14,7 +14,7 @@ struct BrutePerk: View {
     
     var body: some View {
         ZStack {
-            Image("Brute")
+            Image("brute")
                 .renderingMode(.template)
                 .foregroundColor(.primary)
                 .opacity(0.2)
