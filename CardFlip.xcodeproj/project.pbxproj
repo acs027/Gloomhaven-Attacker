@@ -39,6 +39,7 @@
 		287EF15129DA51DD00D2BE76 /* SunkeeperPerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */; };
 		2889105B29CA46BF000D1877 /* PerkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105929CA46BF000D1877 /* PerkView.swift */; };
 		2889105C29CA46BF000D1877 /* BrutePerk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889105A29CA46BF000D1877 /* BrutePerk.swift */; };
+		2896D7FB2A0DC26600AC6183 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2896D7FA2A0DC26600AC6183 /* TutorialView.swift */; };
 		28A1C4FC29F2761100BCB4A3 /* DeckControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */; };
 		28A1C4FF29F2878600BCB4A3 /* iPadDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */; };
 		28A1C50129F287D100BCB4A3 /* iPadSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */; };
@@ -90,6 +91,7 @@
 		287EF15029DA51DD00D2BE76 /* SunkeeperPerk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunkeeperPerk.swift; sourceTree = "<group>"; };
 		2889105929CA46BF000D1877 /* PerkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerkView.swift; sourceTree = "<group>"; };
 		2889105A29CA46BF000D1877 /* BrutePerk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrutePerk.swift; sourceTree = "<group>"; };
+		2896D7FA2A0DC26600AC6183 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		28A1C4FB29F2761100BCB4A3 /* DeckControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckControl.swift; sourceTree = "<group>"; };
 		28A1C4FE29F2878600BCB4A3 /* iPadDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadDeckView.swift; sourceTree = "<group>"; };
 		28A1C50029F287D100BCB4A3 /* iPadSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSideMenu.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				0882E44929A79E2F00FB277E /* CardFlipApp.swift */,
 				28C7D23C29B9047300073C6D /* AppDelegate.swift */,
 				0882E44B29A79E2F00FB277E /* ContentView.swift */,
+				2896D7FA2A0DC26600AC6183 /* TutorialView.swift */,
 				0882E45B29A79F5B00FB277E /* Deck.swift */,
 				282EFE2829AF65B000F706F0 /* DeckView.swift */,
 				0814571229D1AA77000D5DA9 /* Decks.swift */,
@@ -320,6 +323,7 @@
 				28C7D23D29B9047300073C6D /* AppDelegate.swift in Sources */,
 				28B8121629EBA687000D2203 /* OFLView.swift in Sources */,
 				0848720529DAAE2F00C0CB46 /* SoothsingerPerk.swift in Sources */,
+				2896D7FB2A0DC26600AC6183 /* TutorialView.swift in Sources */,
 				0873D95629DA9C1A00C26804 /* NightshroudPerk.swift in Sources */,
 				0807294D29D7E6FF00647877 /* BerserkerPerk.swift in Sources */,
 				2889105B29CA46BF000D1877 /* PerkView.swift in Sources */,

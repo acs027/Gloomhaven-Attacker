@@ -19,10 +19,9 @@ struct DeckControl: View {
                         deck.addBless()
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5).stroke(Color.black)
-                            RoundedRectangle(cornerRadius: 1)
-                                .foregroundColor(Color(red: 6 / 255, green: 66 / 255, blue: 162 / 255))
-                                .opacity(0.7)
+                            RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 4)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                             HStack{
                                 Text("Add Bless")
                                 Text("(\(String(deck.blessCount)))")
@@ -34,10 +33,9 @@ struct DeckControl: View {
                         deck.deckReset()
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5).stroke(Color.black)
-                            RoundedRectangle(cornerRadius: 1)
-                                .foregroundColor(Color(red: 6 / 255, green: 66 / 255, blue: 162 / 255))
-                                .opacity(0.7)
+                            RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 4)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                             Text("Reset Deck")
                         }
                     }
@@ -49,10 +47,9 @@ struct DeckControl: View {
                         deck.addMinusOne()
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5).stroke(Color.black)
-                            RoundedRectangle(cornerRadius: 1)
-                                .foregroundColor(Color(red: 6 / 255, green: 66 / 255, blue: 162 / 255))
-                                .opacity(0.7)
+                            RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 4)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                             HStack{
                                 Text("Add -1")
                                 Text("(\(String(deck.minusoneCount)))")
@@ -64,10 +61,9 @@ struct DeckControl: View {
                         deck.shuffleUndrawn()
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5).stroke(Color.black)
-                            RoundedRectangle(cornerRadius: 1)
-                                .foregroundColor(Color(red: 6 / 255, green: 66 / 255, blue: 162 / 255))
-                                .opacity(0.7)
+                            RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 4)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                             Text("Shuffle Undrawn")
                         }
                         
@@ -79,10 +75,9 @@ struct DeckControl: View {
                         deck.addCurse()
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5).stroke(Color.black)
-                            RoundedRectangle(cornerRadius: 1)
-                                .foregroundColor(Color(red: 6 / 255, green: 66 / 255, blue: 162 / 255))
-                                .opacity(0.7)
+                            RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 4)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                             HStack{
                                 Text("Add Curse")
                                 Text("(\(String(deck.curseCount)))")
@@ -94,10 +89,9 @@ struct DeckControl: View {
                         deck.undo()
                     } label: {
                         ZStack{
-                            RoundedRectangle(cornerRadius: 5).stroke(Color.black)
-                            RoundedRectangle(cornerRadius: 1)
-                                .foregroundColor(Color(red: 6 / 255, green: 66 / 255, blue: 162 / 255))
-                                .opacity(0.7)
+                            RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 4)
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                             Text("Undo")
                         }
                     }

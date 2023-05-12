@@ -63,10 +63,9 @@ struct iPadDeckView: View {
                             }
                         } label : {
                             ZStack{
+                                RoundedRectangle(cornerRadius: 5).stroke(Color.black, lineWidth: 3)
                                 RoundedRectangle(cornerRadius: 5)
-                                    .foregroundColor(Color(red: 246 / 255, green: 223 / 255, blue: 201 / 255))
-                                RoundedRectangle(cornerRadius: 5)
-                                    .stroke(Color.black)
+                                    .foregroundColor(Color(red: 242 / 255, green: 194 / 255, blue: 161 / 255))
                                 Text("Deck Controls")
                             }
                             .frame(width: cardWidth * 0.6)

@@ -40,7 +40,7 @@ struct DeckView: View {
                             Text(deck.characterName)
                                 .frame(maxWidth: .infinity ,alignment: .leading)
                                 .padding()
-                                .lineLimit(2)
+                                .lineLimit(1)
                             Text("\(deck.cards.count - deck.discardCount)")
                                 .animation(nil)
                                 .frame(maxWidth: .infinity ,alignment: .center)

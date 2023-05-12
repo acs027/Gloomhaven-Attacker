@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var currentTab = ""
     @State var showMenu: Bool = false
     
+    @AppStorage("tutorialOn") var tutorialOn: Bool = false
+    
     @State private var offset: CGSize = CGSize(width: -UIScreen.screenWidth / 1.5, height: 0)
     
     init() {
@@ -21,28 +23,35 @@ struct ContentView: View {
     var body: some View {
         if UIDevice.isIPhone {
             NavigationView{
-                VStack {
-                    TabView(selection: $currentTab) {
-                        ForEach(decks.decks, id: \.id) { deste in
-                            DeckView(deck: deste, showMenu: $showMenu)
-                                .tag(deste.characterClass)
-                                .environmentObject(decks)
-                                .background(
-                                    Image("backgroundimage")
-                                        .resizable()
-                                        .ignoresSafeArea()
-                                )
-                        }
-                    }
-                    if showMenu == false && tabCheck() {
-                        HStack(spacing: 0){
+                ZStack{
+                    VStack {
+                        TabView(selection: $currentTab) {
                             ForEach(decks.decks, id: \.id) { deste in
-                                TabButton(image: deste.characterClass)
+                                DeckView(deck: deste, showMenu: $showMenu)
+                                    .tag(deste.characterClass)
+                                    .environmentObject(decks)
+                                    .background(
+                                        Image("backgroundimage")
+                                            .resizable()
+                                            .ignoresSafeArea()
+                                    )
+                            }
+                        }
+                        if showMenu == false && tabCheck() {
+                            HStack(spacing: 0){
+                                ForEach(decks.decks, id: \.id) { deste in
+                                    TabButton(image: deste.characterClass)
+                                }
                             }
                         }
                     }
+                    .frame(width: getRect().width)
+                    
+                    if !tutorialOn {
+                        TutorialView()
+                            .ignoresSafeArea()
+                    }
                 }
-                .frame(width: getRect().width)
             }
             .preferredColorScheme(.light)
             .navigationViewStyle(StackNavigationViewStyle())
