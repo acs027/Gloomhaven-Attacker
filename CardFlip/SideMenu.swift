@@ -98,7 +98,9 @@ struct SideMenu: View {
                     Button{
                         showingSheet.toggle()
                     } label: {
-                        Text("Add new character")
+                        if decks.decks.count < 4 {
+                            Text("Add new character")
+                        }
                     }
                     .disabled(decks.decks.count > 3)
                     
