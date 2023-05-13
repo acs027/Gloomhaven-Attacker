@@ -89,16 +89,11 @@ struct ContentView: View {
                         Button{
                             ipadMenu()
                         } label: {
-                            ZStack(alignment: .topLeading){
-                                Rectangle()
-                                    .frame(width: 30, height: 30)
-                                    .foregroundColor(.clear)
-                                Image(systemName: "line.3.horizontal")
-                                    .resizable()
-                                    .frame(width: 20, height: 15)
-                            }
-                            
+                            Image(systemName: "line.3.horizontal")
+                                .resizable()
+                                .frame(width: 20, height: 15)
                         }
+                        .contentShape(Rectangle().inset(by: -40))
                         .padding(.top, 20)
                         .padding(.leading, 5)
                         Spacer()
