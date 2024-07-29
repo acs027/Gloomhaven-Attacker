@@ -322,9 +322,7 @@ struct HatchetPerk: View {
     }
     
     // Replace one (+0) card with one (+1) WOUND card
-    func rowFour(condition: Bool) {
-//        deck.replaceCard(addCardName: "HatchetWound", remCardName: "zero")
-        
+    func rowFour(condition: Bool) {        
         deck.autoRepCard(condition: condition, cardNameA: "HatchetWound", cardNameB: "zero")
     }
     
