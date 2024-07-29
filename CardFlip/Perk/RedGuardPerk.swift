@@ -81,7 +81,7 @@ struct RedGuardPerk: View {
                         VStack(alignment: .leading, spacing: 0) {
                             HStack{
                                 Text("Replace one")
-                                minusTwo()
+                                minusOne()
                                 Text("card with one")
                                 plusOne()
                                 Text("card")
@@ -298,17 +298,17 @@ struct RedGuardPerk: View {
     
     // Replace one (-1) card with one (+1) card
     func rowFour(condition: Bool) {
-        deck.replaceCard(addCardName: "RedGuardplusOne", remCardName: "minusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "RedGuardplusOne", cardNameB: "minusOne")
     }
     
     // Replace one (+1) card with one (+2) FIRE card
     func rowFive(condition: Bool) {
-        deck.replaceCard(addCardName: "RedGuardFire", remCardName: "plusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "RedGuardFire", cardNameB: "plusOne")
     }
     
     // Replace one (+1) card with one (+2) SUN card
     func rowSix(condition: Bool) {
-        deck.replaceCard(addCardName: "RedGuardSun", remCardName: "plusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "RedGuardSun", cardNameB: "plusOne")
     }
     
     // Add one (+1) FIRESUN card
