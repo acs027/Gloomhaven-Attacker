@@ -313,37 +313,39 @@ struct HatchetPerk: View {
     
     // Replace one (+0) card with one (+2) MUDDLE card
     func rowTwo(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetMuddle", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetMuddle", cardNameB: "zero")
     }
     
     // Replace one (+0) card with one (+1) POISON card
     func rowThree(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetPoison", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetPoison", cardNameB: "zero")
     }
     
     // Replace one (+0) card with one (+1) WOUND card
     func rowFour(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetWound", remCardName: "zero")
+//        deck.replaceCard(addCardName: "HatchetWound", remCardName: "zero")
+        
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetWound", cardNameB: "zero")
     }
     
     // Replace one (+0) card with one (+1) IMMOB card
     func rowFive(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetImmob", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetImmob", cardNameB: "zero")
     }
     
     // Replace one (+0) card with one (+1) PUSH card
     func rowSix(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetPush", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetPush", cardNameB: "zero")
     }
     
     // Replace one (+0) card with one (+0) STUN card
     func rowSeven(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetZeroStun", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetZeroStun", cardNameB: "zero")
     }
     
     // Replace one (+1) card with one (+1) STUN card
     func rowEight(condition: Bool) {
-        deck.replaceCard(addCardName: "HatchetplusOneStun", remCardName: "plusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "HatchetplusOneStun", cardNameB: "plusOne")
     }
     
     // Add one (+2) WIND card

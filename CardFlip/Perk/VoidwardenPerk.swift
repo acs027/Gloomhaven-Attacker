@@ -270,12 +270,12 @@ struct VoidwardenPerk: View {
     
     // Replace one (+0) card with one (+1) FROST card
     func rowFour(condition: Bool) {
-        deck.replaceCard(addCardName: "VoidwardenFrost", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "VoidwardenFrost", cardNameB: "zero")
     }
     
     // Replace one (-1) card with one (+0) HEAL 1 (Ally) card
     func rowFive(condition: Bool) {
-        deck.replaceCard(addCardName: "VoidwardenzeroHeal", remCardName: "minusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "VoidwardenzeroHeal", cardNameB: "minusOne")
     }
     
     // Add one (+1) HEAL 1 (Ally) card

@@ -283,12 +283,12 @@ struct DemolitionistPerk: View {
     
     // Replace one (+0) card with one (+2) MUDDLE card
     func rowFour(condition: Bool) {
-        deck.replaceCard(addCardName: "DemolitionistMuddle", remCardName: "zero")
+        deck.autoRepCard(condition: condition, cardNameA: "DemolitionistMuddle", cardNameB: "zero")
     }
     
     // Replace one (-1) card with one (+0) POISON card
     func rowFive(condition: Bool) {
-        deck.replaceCard(addCardName: "DemolitionistPoison", remCardName: "minusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "DemolitionistPoison", cardNameB: "minusOne")
     }
     
     // Add one (+2) card
@@ -298,12 +298,12 @@ struct DemolitionistPerk: View {
     
     // Replace one (+1) card with one (+2) EARTH card
     func rowSeven(condition: Bool) {
-        deck.replaceCard(addCardName: "DemolitionistEarth", remCardName: "plusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "DemolitionistEarth", cardNameB: "plusOne")
     }
     
     // Replace one (+1) card with one (+2) FIRE card
     func rowEight(condition: Bool) {
-        deck.replaceCard(addCardName: "DemolitionistFire", remCardName: "plusOne")
+        deck.autoRepCard(condition: condition, cardNameA: "DemolitionistFire", cardNameB: "plusOne")
     }
     
     // Add one (+0) All adjacent enemies suffer 1 damage card
